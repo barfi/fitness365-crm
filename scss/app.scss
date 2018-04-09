@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/*
+ * Fitness 365 CRM styles
+ */
+
+// System files inc.
+@import "system/variables";
+@import "system/mixins";
+@import "system/libs";
+@import "system/resets";
+@import "system/global";
+
+// Components files inc.
+@import "components/app-header";
+@import "components/app-sidebar";
+@import "components/app-main-panel";
+@import "components/tabled-page";
+
+// Pages files inc.
+@import "pages/home-page";
+@import "pages/clients-page";

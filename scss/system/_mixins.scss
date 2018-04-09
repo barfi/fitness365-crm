@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+// -----------------------------------------------------
+// Mixins entry point
+// -----------------------------------------------------
+
+// Transforms mixins inc.
+@import "../mixins/transforms";
+// Transitions mixins inc.
+@import "../mixins/transitions";
+// Background-size mixins inc.
+@import "../mixins/background-size";
+// Box-shadow mixins inc.
+@import "../mixins/box-shadow";
+// Font-face mixin inc.
+@import "../mixins/font-face";
+
+
+@mixin media($breakpoint){
+    @media (max-width: $breakpoint) {
+        @content;
+    }
+}

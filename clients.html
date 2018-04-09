@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0, maximum-scale=1">
+    <title>fitness 365 crm | clients page</title>
+    <!--Stylesheets-->
+
+    <!--This is part of semantic for extend from core styles-->
+    <link rel="stylesheet" href="css/dropdown.css">
+    <link rel="stylesheet" href="css/table.css">
+    <link rel="stylesheet" href="css/transition.css">
+    <!--Custom markup styles-->
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<!--app header-->
+<div id="app-header" class="pushable">
+    <div class="fl-l">
+        <div id="sb-toggler">
+            <span></span>
+        </div>
+        <div class="search">
+            <svg class="icon">
+                <use xlink:href="img/sprite.svg#icon-search"></use>
+            </svg>
+            <input type="search" placeholder="Введите для поиска...">
+        </div>
+    </div>
+    <div class="fl-r">
+        <div class="notifications fl-l">
+            <div class="mail">
+                <a href="#" class="label label-red">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#icon-mail"></use>
+                    </svg>
+                </a>
+            </div>
+            <div class="tasks">
+                <a href="#" class="label label-green">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#icon-calendar-2"></use>
+                    </svg>
+                </a>
+            </div>
+            <div class="alerts">
+                <a href="#" class="label label-blue">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#icon-bell"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="profile fl-l">
+            <a href="#" class="info">
+                <p>
+                    <span>Федор Борисов</span>
+                    <span>главный менеджер</span>
+                </p>
+                <span class="avatar online">
+          <img src="img/user_avatar.png" alt="Федор Борисов">
+        </span>
+            </a>
+        </div>
+        <div class="logout fl-l">
+            <button id="btn-logout">
+                <svg>
+                    <use xlink:href="img/sprite.svg#icon-logout"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+</div>
+<!--app sidebar-->
+<div id="app-sidebar" class="pushable">
+    <a href="#" class="crm-logo">
+        <svg>
+            <use xlink:href="img/sprite.svg#crm-logo"></use>
+        </svg>
+        <div class="version">v2.0.7</div>
+    </a>
+    <div class="sb-scroll">
+        <div class="client-info">
+            <a href="#" class="logo" title="Перейти к главному экрану">
+                <div class="img" style="background-image: url('img/client-logo.png')"></div>
+            </a>
+            <div class="region">Санкт-Петербург</div>
+        </div>
+        <!--Navigation-->
+        <nav id="sb-nav">
+            <ul class="sb-nav-menu">
+                <!--nav item-->
+                <li class="sb-nav-item">
+                    <a href="#" class="sb-nav-link active">
+                        <svg class="link-icon">
+                            <use xlink:href="img/sprite.svg#icon-screen"></use>
+                        </svg>
+                        <span>Главный экран</span>
+                    </a>
+                </li>
+                <!--nav item-->
+                <li class="sb-nav-item">
+                    <a href="#" class="sb-nav-link">
+                        <svg class="link-icon">
+                            <use xlink:href="img/sprite.svg#icon-speed"></use>
+                        </svg>
+                        <svg class="down-icon">
+                            <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                        </svg>
+                        <span>Быстрые действия</span>
+                    </a>
+                    <ul class="sb-nav-sub">
+                        <li class="sub-item">
+                            <a href="#" class="sub-link">Новый клиент</a>
+                        </li>
+                        <li class="sub-item">
+                            <a href="#" class="sub-link">Новая продажа</a>
+                        </li>
+                        <li class="sub-item">
+                            <a href="#" class="sub-link">Открыть посещение</a>
+                        </li>
+                    </ul>
+                </li>
+                <!--nav item-->
+                <li class="sb-nav-item">
+                    <a href="clients.html" class="sb-nav-link">
+                        <svg class="link-icon">
+                            <use xlink:href="img/sprite.svg#icon-users"></use>
+                        </svg>
+                        <span>Клиенты</span>
+                    </a>
+                </li>
+                <!--nav item-->
+                <li class="sb-nav-item">
+                    <a href="#" class="sb-nav-link">
+                        <svg class="link-icon">
+                            <use xlink:href="img/sprite.svg#icon-comes"></use>
+                        </svg>
+                        <svg class="down-icon">
+                            <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                        </svg>
+                        <span>Посещения</span>
+                        <span class="badge badge-green">154</span>
+                    </a>
+                    <ul class="sb-nav-sub">
+                        <li class="sub-item">
+                            <a href="#" class="sub-link">Открытые</a>
+                        </li>
+                        <li class="sub-item">
+                            <a href="#" class="sub-link">Мониторинг</a>
+                        </li>
+                        <li class="sub-item">
+                            <a href="#" class="sub-link">Все</a>
+                        </li>
+                    </ul>
+                </li>
+                <!--nav item-->
+                <li class="sb-nav-item">
+                    <a href="#" class="sb-nav-link">
+                        <svg class="link-icon">
+                            <use xlink:href="img/sprite.svg#icon-calendar"></use>
+                        </svg>
+                        <span>Задачи</span>
+                        <span class="badge badge-red">12</span>
+                    </a>
+                </li>
+                <!--nav item-->
+                <li class="sb-nav-item">
+                    <a href="#" class="sb-nav-link">
+                        <svg class="link-icon">
+                            <use xlink:href="img/sprite.svg#icon-code"></use>
+                        </svg>
+                        <span>Продажи</span>
+                        <span class="badge badge-orange">76</span>
+                    </a>
+                </li>
+                <!--nav item-->
+                <li class="sb-nav-item">
+                    <a href="#" class="sb-nav-link">
+                        <svg class="link-icon">
+                            <use xlink:href="img/sprite.svg#icon-calendar-2"></use>
+                        </svg>
+                        <span>Расписание</span>
+                    </a>
+                </li>
+                <!--nav item-->
+                <li class="sb-nav-item">
+                    <a href="#" class="sb-nav-link">
+                        <svg class="link-icon">
+                            <use xlink:href="img/sprite.svg#icon-bell"></use>
+                        </svg>
+                        <span>Уведомления</span>
+                        <span class="badge badge-blue">7</span>
+                    </a>
+                </li>
+                <!--nav item-->
+                <li class="sb-nav-item">
+                    <a href="#" class="sb-nav-link">
+                        <svg class="link-icon">
+                            <use xlink:href="img/sprite.svg#icon-tasks"></use>
+                        </svg>
+                        <span>График тренеров</span>
+                    </a>
+                </li>
+                <!--nav item-->
+                <li class="sb-nav-item">
+                    <a href="#" class="sb-nav-link">
+                        <svg class="link-icon">
+                            <use xlink:href="img/sprite.svg#icon-charts"></use>
+                        </svg>
+                        <span>Управление и отчетность</span>
+                    </a>
+                </li>
+                <!--nav item-->
+                <li class="sb-nav-item">
+                    <a href="#" class="sb-nav-link">
+                        <svg class="link-icon">
+                            <use xlink:href="img/sprite.svg#icon-gear"></use>
+                        </svg>
+                        <span>Настройки</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<!--
+Tabled page header
+Here for avoiding child fixed element problem with transformed parent
+-->
+
+<div class="tabled-page">
+    <div class="tp-header pushable">
+        <div class="tp-header-head">
+            <h1>Клиенты</h1>
+            <div class="tp-header-actions">
+                <!--modifier class 'filtered' for red color-->
+                <button id="btn-filter-toggle" class="filtered">
+                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-filter"></use></svg></i>
+                </button>
+                <!--modifier class 'spin' for animation-->
+                <button class="">
+                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-refresh"></use></svg></i>
+                </button>
+                <button class="special">
+                    <i class="icon-spec"><svg><use xlink:href="img/sprite.svg#icon-user-plus"></use></svg></i>
+                    <span>Новый клиент</span>
+                </button>
+            </div>
+        </div>
+        <div class="tp-header-filters">
+            <div class="filter-box">
+                <div class="f-head">
+                    <h4>Источник</h4>
+                    <input type="checkbox" id="cp-fr-1" hidden>
+                    <label for="cp-fr-1">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#icon-equal-not"></use>
+                        </svg>
+                    </label>
+                </div>
+                <select class="ui search dropdown filter-select" multiple>
+                    <option value=""></option>
+                    <option value="value1">Друзья</option>
+                    <option value="value2">Интернет</option>
+                    <option value="value3">Мой сайт</option>
+                    <option value="value4">Реклама в газете</option>
+                    <option value="value5">Реклама по тв</option>
+                </select>
+            </div>
+            <div class="filter-box">
+                <div class="f-head">
+                    <h4>Организация</h4>
+                    <input type="checkbox" id="cp-fr-2" hidden>
+                    <label for="cp-fr-2">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#icon-equal-not"></use>
+                        </svg>
+                    </label>
+                </div>
+                <select class="ui search dropdown filter-select" multiple>
+                    <option value=""></option>
+                    <option value="value1">Друзья</option>
+                    <option value="value2">Интернет</option>
+                    <option value="value3">Мой сайт</option>
+                    <option value="value4">Реклама в газете</option>
+                    <option value="value5">Реклама по тв</option>
+                </select>
+            </div>
+            <div class="filter-box">
+                <div class="f-head">
+                    <h4>Менеджер</h4>
+                    <input type="checkbox" id="cp-fr-3" hidden checked>
+                    <label for="cp-fr-3">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#icon-equal-not"></use>
+                        </svg>
+                    </label>
+                </div>
+                <select class="ui search dropdown filter-select" multiple>
+                    <option value=""></option>
+                    <option value="value1">Друзья</option>
+                    <option value="value2">Интернет</option>
+                    <option value="value3">Мой сайт</option>
+                    <option value="value4">Реклама в газете</option>
+                    <option value="value5">Реклама по тв</option>
+                </select>
+            </div>
+            <div class="filter-box">
+                <div class="f-head">
+                    <h4>Статус</h4>
+                    <input type="checkbox" id="cp-fr-4" hidden>
+                    <label for="cp-fr-4">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#icon-equal-not"></use>
+                        </svg>
+                    </label>
+                </div>
+                <select class="ui search dropdown filter-select" multiple>
+                    <option value=""></option>
+                    <option value="value1">Друзья</option>
+                    <option value="value2">Интернет</option>
+                    <option value="value3">Мой сайт</option>
+                    <option value="value4">Реклама в газете</option>
+                    <option value="value5">Реклама по тв</option>
+                </select>
+            </div>
+            <div class="filter-box">
+                <div class="f-head">
+                    <h4>Тип</h4>
+                    <input type="checkbox" id="cp-fr-5" hidden checked>
+                    <label for="cp-fr-5">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#icon-equal-not"></use>
+                        </svg>
+                    </label>
+                </div>
+                <select class="ui search dropdown filter-select" multiple>
+                    <option value=""></option>
+                    <option value="value1">Друзья</option>
+                    <option value="value2">Интернет</option>
+                    <option value="value3">Мой сайт</option>
+                    <option value="value4">Реклама в газете</option>
+                    <option value="value5">Реклама по тв</option>
+                </select>
+            </div>
+            <div class="filter-btns">
+                <button class="green">Сохранить</button>
+                <button>Очистить</button>
+            </div>
+        </div>
+        <div class="tp-header-controls">
+            <div class="options">
+                <div class="check-all">
+                    <input id="thc-check-all" type="checkbox" hidden>
+                    <label for="thc-check-all">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                        </svg>
+                    </label>
+                </div>
+                <div class="constructor">
+                    <div class="ui dropdown dropdown-simple item icon pointing left top">
+                        <i>
+                            <svg>
+                                <use xlink:href="img/sprite.svg#icon-gear"></use>
+                            </svg>
+                        </i>
+                        <div class="menu">
+                            <div class="item">
+                                <input type="checkbox" id="cp_tc_1" hidden>
+                                <label for="cp_tc_1">
+                                    <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                    <span class="text">Полное имя</span>
+                                </label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" id="cp_tc_2" hidden>
+                                <label for="cp_tc_2">
+                                    <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                    <span class="text">Возраст</span>
+                                </label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" id="cp_tc_3" hidden>
+                                <label for="cp_tc_3">
+                                    <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                    <span class="text">Дата рождения</span>
+                                </label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" id="cp_tc_4" hidden>
+                                <label for="cp_tc_4">
+                                    <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                    <span class="text">Мобильный</span>
+                                </label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" id="cp_tc_5" hidden>
+                                <label for="cp_tc_5">
+                                    <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                    <span class="text">E-mail</span>
+                                </label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" id="cp_tc_6" hidden>
+                                <label for="cp_tc_6">
+                                    <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                    <span class="text">Активная карта</span>
+                                </label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" id="cp_tc_7" hidden>
+                                <label for="cp_tc_7">
+                                    <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                    <span class="text">Источник</span>
+                                </label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" id="cp_tc_8" hidden>
+                                <label for="cp_tc_8">
+                                    <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                    <span class="text">Организация</span>
+                                </label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" id="cp_tc_9" hidden>
+                                <label for="cp_tc_9">
+                                    <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                    <span class="text">Менеджер</span>
+                                </label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" id="cp_tc_10" hidden>
+                                <label for="cp_tc_10">
+                                    <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                    <span class="text">Статус</span>
+                                </label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" id="cp_tc_11" hidden>
+                                <label for="cp_tc_11">
+                                    <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                    <span class="text">Тип</span>
+                                </label>
+                            </div>
+                            <div class="item">
+                                <input type="checkbox" id="cp_tc_12" hidden>
+                                <label for="cp_tc_12">
+                                    <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                    <span class="text">Создан</span>
+                                </label>
+                            </div>
+                            <!--Form footer-->
+                            <div class="clear"></div>
+                            <a class="item extra">
+                                <span class="text">Показать все</span>
+                            </a>
+                            <a class="item extra">
+                                <span class="text">Скрыть все</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="actions">
+                <!--Buttons modifiers classes: red, green + attr disabled-->
+                <button class="red">Удалить</button>
+                <button>Позвонить</button>
+                <button class="green">Написать</button>
+                <button disabled>Не активно</button>
+            </div>
+            <div class="pagination">
+                <div class="count-select">
+                    <span>На странице:</span>
+                    <!--semantic dropdown-->
+                    <div class="ui dropdown dropdown-simple labeled button pointing">
+                        <span class="text">100</span>
+                        <i class="angle down">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                            </svg>
+                        </i>
+                        <div class="menu">
+                            <div class="item">10</div>
+                            <div class="item">25</div>
+                            <div class="item">50</div>
+                            <div class="item">100</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navs">
+                    <button class="prev" title="Двойной клик в начало">
+                        <i class="icon">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                            </svg>
+                        </i>
+                    </button>
+                    <span>2 из 12</span>
+                    <button class="next" title="Двойной клик в конец">
+                        <i class="icon">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                            </svg>
+                        </i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--app content panel-->
+<div id="app-main-panel" class="pushable">
+    <!--clients page markup START-->
+    <div id="app-clients-page" class="tabled-page tabled-page-pt">
+        <div class="tp-body">
+            <table class="ui sortable celled table ">
+                <thead>
+                <tr>
+                    <!--NOTE: inline styles of th's (min-width) are optional & individual for each th-->
+                    <th class="no-sort tr-handles">&nbsp;</th>
+                    <th class="sorted descending" style="min-width: 240px">
+                        <span>
+                            Полное имя
+                            <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                        </span>
+                    </th>
+                    <th class="" style="min-width: 76px">
+                        <span>
+                            Возраст
+                            <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                        </span>
+                    </th>
+                    <th class="" style="min-width: 102px">
+                        <span>
+                            Мобильный
+                        <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                        </span>
+                    </th>
+                    <th class="" style="min-width: 194px">
+                        <span>
+                            E-mail
+                        <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                        </span>
+                    </th>
+                    <th class="" style="min-width: 158px">
+                        <span>
+                            Менеджер
+                        <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                        </span>
+                    </th>
+                    <th class="" style="min-width: 120px">
+                        <span>
+                            Статус
+                        <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                        </span>
+                    </th>
+                    <th class="" style="min-width: 90px">
+                        <span>
+                            Тип
+                        <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                        </span>
+                    </th>
+                    <th class="" style="min-width: 204px">
+                        <span>
+                            Активная карта
+                        <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                        </span>
+                    </th>
+                    <th class="" style="min-width: 150px">
+                        <span>
+                            Организация
+                        <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                        </span>
+                    </th>
+                    <th class="" style="min-width: 138px">
+                        <span>
+                            Создан
+                        <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                        </span>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <!--1 row-->
+                <tr>
+                    <td>
+                        <div class="handles">
+                            <div class="select">
+                                <input id="cp-tr-1" type="checkbox" hidden>
+                                <label for="cp-tr-1">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="ui dropdown dropdown-simple item icon pointing left top">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                    </svg>
+                                </i>
+                                <div class="menu">
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-eye"></use>
+                                        </svg>
+                                        Просмотреть
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                        </svg>
+                                        Редактировать
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-comes"></use>
+                                        </svg>
+                                        Открыть посещение
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-code"></use>
+                                        </svg>
+                                        Новая продажа
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                        Удалить клиента
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span>Иванов Иван Иванович</span>
+                        <span class="debt" title="Есть задолжность"><svg><use
+                        xlink:href="img/sprite.svg#icon-dollar"></use></svg></span>
+                        <span class="user-card" title="Активная карта"><svg><use
+                        xlink:href="img/sprite.svg#icon-user-card"></use></svg></span>
+                        <p class="description">Нужно попытаться продать годовой абонемент</p>
+                    </td>
+                    <td>39</td>
+                    <td>88005553535</td>
+                    <td><a href="#" class="mail">harold@hidethepain.com</a></td>
+                    <td>Севастьянова Надежда</td>
+                    <td>Интересующийся</td>
+                    <td>Работающий</td>
+                    <td>Клубная 1 год</td>
+                    <td>Хабаровск</td>
+                    <td><span class="date">20.06.18</span><span class="time">13:15</span></td>
+                </tr>
+                <!--2 row-->
+                <tr class="selected">
+                    <td>
+                        <div class="handles">
+                            <div class="select">
+                                <input id="cp-tr-2" type="checkbox" hidden checked>
+                                <label for="cp-tr-2">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="ui dropdown dropdown-simple item icon pointing left top">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                    </svg>
+                                </i>
+                                <div class="menu">
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-eye"></use>
+                                        </svg>
+                                        Просмотреть
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                        </svg>
+                                        Редактировать
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-comes"></use>
+                                        </svg>
+                                        Открыть посещение
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-code"></use>
+                                        </svg>
+                                        Новая продажа
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                        Удалить клиента
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span>Антуражная Изольда Владимировна</span>
+                    </td>
+                    <td>43</td>
+                    <td>+79212649871</td>
+                    <td><a href="#" class="mail">izolda_9181@mail.ru</a></td>
+                    <td>Сидоров Николай</td>
+                    <td>Постоянный</td>
+                    <td>Работающий</td>
+                    <td>2 месяца + бонус за что-то там</td>
+                    <td>Филиал в Москве</td>
+                    <td><span class="date">20.06.18</span><span class="time">12:09</span></td>
+                </tr>
+                <!--3 row-->
+                <tr>
+                    <td>
+                        <div class="handles">
+                            <div class="select">
+                                <input id="cp-tr-3" type="checkbox" hidden>
+                                <label for="cp-tr-3">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="ui dropdown dropdown-simple item icon pointing left top">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                    </svg>
+                                </i>
+                                <div class="menu">
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-eye"></use>
+                                        </svg>
+                                        Просмотреть
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                        </svg>
+                                        Редактировать
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-comes"></use>
+                                        </svg>
+                                        Открыть посещение
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-code"></use>
+                                        </svg>
+                                        Новая продажа
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                        Удалить клиента
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span>Иванов Иван Иванович</span>
+                        <span class="debt" title="Есть задолжность"><svg><use
+                        xlink:href="img/sprite.svg#icon-dollar"></use></svg></span>
+                    </td>
+                    <td>39</td>
+                    <td>88005553535 88006753535</td>
+                    <td><a href="#" class="mail">harold@hidethepain.com</a></td>
+                    <td>Севастьянова Надежда</td>
+                    <td>Интересующийся</td>
+                    <td>Работающий</td>
+                    <td>Клубная 1 год</td>
+                    <td>Хабаровск</td>
+                    <td><span class="date">20.06.18</span><span class="time">13:15</span></td>
+                </tr>
+                <!--4 row-->
+                <tr>
+                    <td>
+                        <div class="handles">
+                            <div class="select">
+                                <input id="cp-tr-4" type="checkbox" hidden>
+                                <label for="cp-tr-4">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="ui dropdown dropdown-simple item icon pointing left top">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                    </svg>
+                                </i>
+                                <div class="menu">
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-eye"></use>
+                                        </svg>
+                                        Просмотреть
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                        </svg>
+                                        Редактировать
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-comes"></use>
+                                        </svg>
+                                        Открыть посещение
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-code"></use>
+                                        </svg>
+                                        Новая продажа
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                        Удалить клиента
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span>Иванов Иван Иванович</span>
+                        <span class="user-card" title="Активная карта"><svg><use
+                        xlink:href="img/sprite.svg#icon-user-card"></use></svg></span>
+                    </td>
+                    <td>39</td>
+                    <td>88005553535</td>
+                    <td><a href="#" class="mail">harold@hidethepain.com</a></td>
+                    <td>Севастьянова Надежда</td>
+                    <td>Интересующийся</td>
+                    <td>Работающий</td>
+                    <td>Клубная 1 год</td>
+                    <td>Хабаровск</td>
+                    <td><span class="date">20.06.18</span><span class="time">13:15</span></td>
+                </tr>
+                <!--5 row-->
+                <tr>
+                    <td>
+                        <div class="handles">
+                            <div class="select">
+                                <input id="cp-tr-5" type="checkbox" hidden>
+                                <label for="cp-tr-5">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="ui dropdown dropdown-simple item icon pointing left top">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                    </svg>
+                                </i>
+                                <div class="menu">
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-eye"></use>
+                                        </svg>
+                                        Просмотреть
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                        </svg>
+                                        Редактировать
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-comes"></use>
+                                        </svg>
+                                        Открыть посещение
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-code"></use>
+                                        </svg>
+                                        Новая продажа
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                        Удалить клиента
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span>Быстрый Валентин Петрович</span>
+                        <span class="user-card" title="Активная карта"><svg><use
+                        xlink:href="img/sprite.svg#icon-user-card"></use></svg></span>
+                    </td>
+                    <td>21</td>
+                    <td>+79119784512</td>
+                    <td><a href="#" class="mail">valya_flash@inbox.ru</a></td>
+                    <td>Сидоров Николай</td>
+                    <td>Постоянный</td>
+                    <td>Студент</td>
+                    <td>3 месяца + скидка на йогу</td>
+                    <td>ИП Сметанин Г. П.</td>
+                    <td><span class="date">10.02.17</span><span class="time">10:25</span></td>
+                </tr>
+                <!--6 row-->
+                <tr class="selected">
+                    <td>
+                        <div class="handles">
+                            <div class="select">
+                                <input id="cp-tr-6" type="checkbox" hidden checked>
+                                <label for="cp-tr-6">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="ui dropdown dropdown-simple item icon pointing left top">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                    </svg>
+                                </i>
+                                <div class="menu">
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-eye"></use>
+                                        </svg>
+                                        Просмотреть
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                        </svg>
+                                        Редактировать
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-comes"></use>
+                                        </svg>
+                                        Открыть посещение
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-code"></use>
+                                        </svg>
+                                        Новая продажа
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                        Удалить клиента
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span>Расторгуева Изольда Владимировна</span>
+                    </td>
+                    <td>43</td>
+                    <td>+79212649871</td>
+                    <td><a href="#" class="mail">izolda_9181@mail.ru</a></td>
+                    <td>Сидоров Николай</td>
+                    <td>Постоянный</td>
+                    <td>Работающий</td>
+                    <td>2 месяца + бонус за что-то там</td>
+                    <td>Филиал в Москве</td>
+                    <td><span class="date">20.06.18</span><span class="time">12:09</span></td>
+                </tr>
+                <!--7 row-->
+                <tr>
+                    <td>
+                        <div class="handles">
+                            <div class="select">
+                                <input id="cp-tr-7" type="checkbox" hidden>
+                                <label for="cp-tr-7">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="ui dropdown dropdown-simple item icon pointing left top">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                    </svg>
+                                </i>
+                                <div class="menu">
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-eye"></use>
+                                        </svg>
+                                        Просмотреть
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                        </svg>
+                                        Редактировать
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-comes"></use>
+                                        </svg>
+                                        Открыть посещение
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-code"></use>
+                                        </svg>
+                                        Новая продажа
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                        Удалить клиента
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span>Иванов Иван Иванович</span>
+                        <span class="debt" title="Есть задолжность"><svg><use
+                        xlink:href="img/sprite.svg#icon-dollar"></use></svg></span>
+                        <span class="user-card" title="Активная карта"><svg><use
+                        xlink:href="img/sprite.svg#icon-user-card"></use></svg></span>
+                        <p class="description">Нужно попытаться продать годовой абонемент</p>
+                    </td>
+                    <td>39</td>
+                    <td>88005553535</td>
+                    <td><a href="#" class="mail">harold@hidethepain.com</a></td>
+                    <td>Севастьянова Надежда</td>
+                    <td>Интересующийся</td>
+                    <td>Работающий</td>
+                    <td>Клубная 1 год</td>
+                    <td>Хабаровск</td>
+                    <td><span class="date">20.06.18</span><span class="time">13:15</span></td>
+                </tr>
+                <!--8 row-->
+                <tr>
+                    <td>
+                        <div class="handles">
+                            <div class="select">
+                                <input id="cp-tr-8" type="checkbox" hidden>
+                                <label for="cp-tr-8">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="ui dropdown dropdown-simple item icon pointing left top">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                    </svg>
+                                </i>
+                                <div class="menu">
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-eye"></use>
+                                        </svg>
+                                        Просмотреть
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                        </svg>
+                                        Редактировать
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-comes"></use>
+                                        </svg>
+                                        Открыть посещение
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-code"></use>
+                                        </svg>
+                                        Новая продажа
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                        Удалить клиента
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span>Быстрый Валентин Петрович</span>
+                        <span class="user-card" title="Активная карта"><svg><use
+                        xlink:href="img/sprite.svg#icon-user-card"></use></svg></span>
+                    </td>
+                    <td>21</td>
+                    <td>+79119784512</td>
+                    <td><a href="#" class="mail">valya_flash@inbox.ru</a></td>
+                    <td>Сидоров Николай</td>
+                    <td>Постоянный</td>
+                    <td>Студент</td>
+                    <td>3 месяца + скидка на йогу</td>
+                    <td>ИП Сметанин Г. П.</td>
+                    <td><span class="date">10.02.17</span><span class="time">10:25</span></td>
+                </tr>
+                <!--9 row-->
+                <tr>
+                    <td>
+                        <div class="handles">
+                            <div class="select">
+                                <input id="cp-tr-9" type="checkbox" hidden>
+                                <label for="cp-tr-9">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="ui dropdown dropdown-simple item icon pointing left top">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                    </svg>
+                                </i>
+                                <div class="menu">
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-eye"></use>
+                                        </svg>
+                                        Просмотреть
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                        </svg>
+                                        Редактировать
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-comes"></use>
+                                        </svg>
+                                        Открыть посещение
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-code"></use>
+                                        </svg>
+                                        Новая продажа
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                        Удалить клиента
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span>Быстрый Валентин Петрович</span>
+                        <span class="user-card" title="Активная карта"><svg><use
+                        xlink:href="img/sprite.svg#icon-user-card"></use></svg></span>
+                    </td>
+                    <td>21</td>
+                    <td>+79119784512</td>
+                    <td><a href="#" class="mail">valya_flash@inbox.ru</a></td>
+                    <td>Сидоров Николай</td>
+                    <td>Постоянный</td>
+                    <td>Студент</td>
+                    <td>3 месяца + скидка на йогу</td>
+                    <td>ИП Сметанин Г. П.</td>
+                    <td><span class="date">10.02.17</span><span class="time">10:25</span></td>
+                </tr>
+                <!--10 row-->
+                <tr>
+                    <td>
+                        <div class="handles">
+                            <div class="select">
+                                <input id="cp-tr-10" type="checkbox" hidden>
+                                <label for="cp-tr-10">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="ui dropdown dropdown-simple item icon pointing left top">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                    </svg>
+                                </i>
+                                <div class="menu">
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-eye"></use>
+                                        </svg>
+                                        Просмотреть
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                        </svg>
+                                        Редактировать
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-comes"></use>
+                                        </svg>
+                                        Открыть посещение
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-code"></use>
+                                        </svg>
+                                        Новая продажа
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                        Удалить клиента
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span>Быстрый Валентин Петрович</span>
+                        <span class="user-card" title="Активная карта"><svg><use
+                        xlink:href="img/sprite.svg#icon-user-card"></use></svg></span>
+                    </td>
+                    <td>21</td>
+                    <td>+79119784512</td>
+                    <td><a href="#" class="mail">valya_flash@inbox.ru</a></td>
+                    <td>Сидоров Николай</td>
+                    <td>Постоянный</td>
+                    <td>Студент</td>
+                    <td>3 месяца + скидка на йогу</td>
+                    <td>ИП Сметанин Г. П.</td>
+                    <td><span class="date">10.02.17</span><span class="time">10:25</span></td>
+                </tr>
+                <!--11 row-->
+                <tr>
+                    <td>
+                        <div class="handles">
+                            <div class="select">
+                                <input id="cp-tr-11" type="checkbox" hidden>
+                                <label for="cp-tr-11">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="ui dropdown dropdown-simple item icon pointing left top">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                    </svg>
+                                </i>
+                                <div class="menu">
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-eye"></use>
+                                        </svg>
+                                        Просмотреть
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                        </svg>
+                                        Редактировать
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-comes"></use>
+                                        </svg>
+                                        Открыть посещение
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-code"></use>
+                                        </svg>
+                                        Новая продажа
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                        Удалить клиента
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span>Быстрый Валентин Петрович</span>
+                        <span class="user-card" title="Активная карта"><svg><use
+                        xlink:href="img/sprite.svg#icon-user-card"></use></svg></span>
+                    </td>
+                    <td>21</td>
+                    <td>+79119784512</td>
+                    <td><a href="#" class="mail">valya_flash@inbox.ru</a></td>
+                    <td>Сидоров Николай</td>
+                    <td>Постоянный</td>
+                    <td>Студент</td>
+                    <td>3 месяца + скидка на йогу</td>
+                    <td>ИП Сметанин Г. П.</td>
+                    <td><span class="date">10.02.17</span><span class="time">10:25</span></td>
+                </tr>
+                <!--12 row-->
+                <tr>
+                    <td>
+                        <div class="handles">
+                            <div class="select">
+                                <input id="cp-tr-12" type="checkbox" hidden>
+                                <label for="cp-tr-12">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="ui dropdown dropdown-simple item icon pointing left top">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                    </svg>
+                                </i>
+                                <div class="menu">
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-eye"></use>
+                                        </svg>
+                                        Просмотреть
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                        </svg>
+                                        Редактировать
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-comes"></use>
+                                        </svg>
+                                        Открыть посещение
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-code"></use>
+                                        </svg>
+                                        Новая продажа
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                        Удалить клиента
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span>Быстрый Валентин Петрович</span>
+                        <span class="user-card" title="Активная карта"><svg><use
+                        xlink:href="img/sprite.svg#icon-user-card"></use></svg></span>
+                    </td>
+                    <td>21</td>
+                    <td>+79119784512</td>
+                    <td><a href="#" class="mail">valya_flash@inbox.ru</a></td>
+                    <td>Сидоров Николай</td>
+                    <td>Постоянный</td>
+                    <td>Студент</td>
+                    <td>3 месяца + скидка на йогу</td>
+                    <td>ИП Сметанин Г. П.</td>
+                    <td><span class="date">10.02.17</span><span class="time">10:25</span></td>
+                </tr>
+                <!--13 row-->
+                <tr>
+                    <td>
+                        <div class="handles">
+                            <div class="select">
+                                <input id="cp-tr-13" type="checkbox" hidden>
+                                <label for="cp-tr-13">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="ui dropdown dropdown-simple item icon pointing left top">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                    </svg>
+                                </i>
+                                <div class="menu">
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-eye"></use>
+                                        </svg>
+                                        Просмотреть
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                        </svg>
+                                        Редактировать
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-comes"></use>
+                                        </svg>
+                                        Открыть посещение
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-code"></use>
+                                        </svg>
+                                        Новая продажа
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                        Удалить клиента
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span>Быстрый Валентин Петрович</span>
+                        <span class="user-card" title="Активная карта"><svg><use
+                        xlink:href="img/sprite.svg#icon-user-card"></use></svg></span>
+                    </td>
+                    <td>21</td>
+                    <td>+79119784512</td>
+                    <td><a href="#" class="mail">valya_flash@inbox.ru</a></td>
+                    <td>Сидоров Николай</td>
+                    <td>Постоянный</td>
+                    <td>Студент</td>
+                    <td>3 месяца + скидка на йогу</td>
+                    <td>ИП Сметанин Г. П.</td>
+                    <td><span class="date">10.02.17</span><span class="time">10:25</span></td>
+                </tr>
+                <!--14 row-->
+                <tr>
+                    <td>
+                        <div class="handles">
+                            <div class="select">
+                                <input id="cp-tr-14" type="checkbox" hidden>
+                                <label for="cp-tr-14">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="ui dropdown dropdown-simple item icon pointing left top">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                    </svg>
+                                </i>
+                                <div class="menu">
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-eye"></use>
+                                        </svg>
+                                        Просмотреть
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                        </svg>
+                                        Редактировать
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-comes"></use>
+                                        </svg>
+                                        Открыть посещение
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-code"></use>
+                                        </svg>
+                                        Новая продажа
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                        Удалить клиента
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span>Быстрый Валентин Петрович</span>
+                        <span class="user-card" title="Активная карта"><svg><use
+                        xlink:href="img/sprite.svg#icon-user-card"></use></svg></span>
+                    </td>
+                    <td>21</td>
+                    <td>+79119784512</td>
+                    <td><a href="#" class="mail">valya_flash@inbox.ru</a></td>
+                    <td>Сидоров Николай</td>
+                    <td>Постоянный</td>
+                    <td>Студент</td>
+                    <td>3 месяца + скидка на йогу</td>
+                    <td>ИП Сметанин Г. П.</td>
+                    <td><span class="date">10.02.17</span><span class="time">10:25</span></td>
+                </tr>
+                <!--15 row-->
+                <tr>
+                    <td>
+                        <div class="handles">
+                            <div class="select">
+                                <input id="cp-tr-15" type="checkbox" hidden>
+                                <label for="cp-tr-15">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="ui dropdown dropdown-simple item icon pointing left top">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                    </svg>
+                                </i>
+                                <div class="menu">
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-eye"></use>
+                                        </svg>
+                                        Просмотреть
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                        </svg>
+                                        Редактировать
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-comes"></use>
+                                        </svg>
+                                        Открыть посещение
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-code"></use>
+                                        </svg>
+                                        Новая продажа
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                        </svg>
+                                        Удалить клиента
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <span>Быстрый Валентин Петрович</span>
+                        <span class="user-card" title="Активная карта"><svg><use
+                        xlink:href="img/sprite.svg#icon-user-card"></use></svg></span>
+                    </td>
+                    <td>21</td>
+                    <td>+79119784512</td>
+                    <td><a href="#" class="mail">valya_flash@inbox.ru</a></td>
+                    <td>Сидоров Николай</td>
+                    <td>Постоянный</td>
+                    <td>Студент</td>
+                    <td>3 месяца + скидка на йогу</td>
+                    <td>ИП Сметанин Г. П.</td>
+                    <td><span class="date">10.02.17</span><span class="time">10:25</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--clients page markup END-->
+</div>
+
+<!--JavaScript for clients page-->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery.nicescroll.min.js"></script>
+<script src="js/svg4everybody.min.js"></script>
+<script src="js/table-sort.js"></script>
+<!--Semantic scripts-->
+<script src="js/semantic/dropdown.min.js"></script>
+<script src="js/semantic/transition.min.js"></script>
+<!--Main app JavaScript-->
+<script src="js/app-global.js"></script>
+<script src="js/app-clients.js"></script>
+</body>
+</html>

@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=0, maximum-scale=1">
+  <title>fitness 365 crm</title>
+  <!--Stylesheets-->
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<!--app header-->
+<div id="app-header" class="pushable">
+  <div class="fl-l">
+    <div id="sb-toggler">
+      <span></span>
+    </div>
+    <div class="search">
+      <svg class="icon">
+        <use xlink:href="img/sprite.svg#icon-search"></use>
+      </svg>
+      <input type="search" placeholder="Введите для поиска...">
+    </div>
+  </div>
+  <div class="fl-r">
+    <div class="notifications fl-l">
+      <div class="mail">
+        <a href="#" class="label label-red">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-mail"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="tasks">
+        <a href="#" class="label label-green">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-calendar-2"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="alerts">
+        <a href="#" class="label label-blue">
+          <svg>
+            <use xlink:href="img/sprite.svg#icon-bell"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="profile fl-l">
+      <a href="#" class="info">
+        <p>
+          <span>Федор Борисов</span>
+          <span>главный менеджер</span>
+        </p>
+        <span class="avatar online">
+          <img src="img/user_avatar.png" alt="Федор Борисов">
+        </span>
+      </a>
+    </div>
+    <div class="logout fl-l">
+      <button id="btn-logout">
+        <svg>
+          <use xlink:href="img/sprite.svg#icon-logout"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+<!--app sidebar-->
+<div id="app-sidebar" class="pushable">
+  <a href="#" class="crm-logo">
+    <svg>
+      <use xlink:href="img/sprite.svg#crm-logo"></use>
+    </svg>
+    <div class="version">v2.0.7</div>
+  </a>
+  <div class="sb-scroll">
+    <div class="client-info">
+      <a href="#" class="logo" title="Перейти к главному экрану">
+        <div class="img" style="background-image: url('img/client-logo.png')"></div>
+      </a>
+      <div class="region">Санкт-Петербург</div>
+    </div>
+    <!--Navigation-->
+    <nav id="sb-nav">
+      <ul class="sb-nav-menu">
+        <!--nav item-->
+        <li class="sb-nav-item">
+          <a href="#" class="sb-nav-link active">
+            <svg class="link-icon">
+              <use xlink:href="img/sprite.svg#icon-screen"></use>
+            </svg>
+            <span>Главный экран</span>
+          </a>
+        </li>
+        <!--nav item-->
+        <li class="sb-nav-item">
+          <a href="#" class="sb-nav-link">
+            <svg class="link-icon">
+              <use xlink:href="img/sprite.svg#icon-speed"></use>
+            </svg>
+            <svg class="down-icon">
+              <use xlink:href="img/sprite.svg#icon-arrow"></use>
+            </svg>
+            <span>Быстрые действия</span>
+          </a>
+          <ul class="sb-nav-sub">
+            <li class="sub-item">
+              <a href="#" class="sub-link">Новый клиент</a>
+            </li>
+            <li class="sub-item">
+              <a href="#" class="sub-link">Новая продажа</a>
+            </li>
+            <li class="sub-item">
+              <a href="#" class="sub-link">Открыть посещение</a>
+            </li>
+          </ul>
+        </li>
+        <!--nav item-->
+        <li class="sb-nav-item">
+          <a href="clients.html" class="sb-nav-link">
+            <svg class="link-icon">
+              <use xlink:href="img/sprite.svg#icon-users"></use>
+            </svg>
+            <span>Клиенты</span>
+          </a>
+        </li>
+        <!--nav item-->
+        <li class="sb-nav-item">
+          <a href="#" class="sb-nav-link">
+            <svg class="link-icon">
+              <use xlink:href="img/sprite.svg#icon-comes"></use>
+            </svg>
+            <svg class="down-icon">
+              <use xlink:href="img/sprite.svg#icon-arrow"></use>
+            </svg>
+            <span>Посещения</span>
+            <span class="badge badge-green">154</span>
+          </a>
+          <ul class="sb-nav-sub">
+            <li class="sub-item">
+              <a href="#" class="sub-link">Открытые</a>
+            </li>
+            <li class="sub-item">
+              <a href="#" class="sub-link">Мониторинг</a>
+            </li>
+            <li class="sub-item">
+              <a href="#" class="sub-link">Все</a>
+            </li>
+          </ul>
+        </li>
+        <!--nav item-->
+        <li class="sb-nav-item">
+          <a href="#" class="sb-nav-link">
+            <svg class="link-icon">
+              <use xlink:href="img/sprite.svg#icon-calendar"></use>
+            </svg>
+            <span>Задачи</span>
+            <span class="badge badge-red">12</span>
+          </a>
+        </li>
+        <!--nav item-->
+        <li class="sb-nav-item">
+          <a href="#" class="sb-nav-link">
+            <svg class="link-icon">
+              <use xlink:href="img/sprite.svg#icon-code"></use>
+            </svg>
+            <span>Продажи</span>
+            <span class="badge badge-orange">76</span>
+          </a>
+        </li>
+        <!--nav item-->
+        <li class="sb-nav-item">
+          <a href="#" class="sb-nav-link">
+            <svg class="link-icon">
+              <use xlink:href="img/sprite.svg#icon-calendar-2"></use>
+            </svg>
+            <span>Расписание</span>
+          </a>
+        </li>
+        <!--nav item-->
+        <li class="sb-nav-item">
+          <a href="#" class="sb-nav-link">
+            <svg class="link-icon">
+              <use xlink:href="img/sprite.svg#icon-bell"></use>
+            </svg>
+            <span>Уведомления</span>
+            <span class="badge badge-blue">7</span>
+          </a>
+        </li>
+        <!--nav item-->
+        <li class="sb-nav-item">
+          <a href="#" class="sb-nav-link">
+            <svg class="link-icon">
+              <use xlink:href="img/sprite.svg#icon-tasks"></use>
+            </svg>
+            <span>График тренеров</span>
+          </a>
+        </li>
+        <!--nav item-->
+        <li class="sb-nav-item">
+          <a href="#" class="sb-nav-link">
+            <svg class="link-icon">
+              <use xlink:href="img/sprite.svg#icon-charts"></use>
+            </svg>
+            <span>Управление и отчетность</span>
+          </a>
+        </li>
+        <!--nav item-->
+        <li class="sb-nav-item">
+          <a href="#" class="sb-nav-link">
+            <svg class="link-icon">
+              <use xlink:href="img/sprite.svg#icon-gear"></use>
+            </svg>
+            <span>Настройки</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!--app content panel-->
+<div id="app-main-panel" class="pushable">
+  <!--home page-->
+  <div id="app-home-page">
+    <div class="grid-stack" data-gs-width="6">
+      <div class="grid-stack-item"
+           data-gs-x="0" data-gs-y="0"
+           data-gs-width="6" data-gs-height="5" data-gs-min-height="5" data-gs-min-width="2">
+          <div class="grid-stack-item-content widget widget-actions">
+            <div class="header">
+              <h2>Быстрые действия</h2>
+              <!--<input type="text" placeholder="Введите название виджета" value="Быстрые действия">-->
+              <div class="menu">
+                <button>
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="body">
+              <div class="row">
+                <div class="action-item">
+                  <button>
+                    <svg>
+                      <use xlink:href="img/sprite.svg#icon-user-plus"></use>
+                    </svg>
+                  </button>
+                  <h3>Новый клиент</h3>
+                </div>
+                <div class="action-item">
+                  <button>
+                    <svg>
+                      <use xlink:href="img/sprite.svg#icon-sale"></use>
+                    </svg>
+                  </button>
+                  <h3>Новая продажа</h3>
+                </div>
+                <div class="action-item">
+                  <button>
+                    <svg>
+                      <use xlink:href="img/sprite.svg#icon-th-list"></use>
+                    </svg>
+                  </button>
+                  <h3>Открыть посещение</h3>
+                </div>
+                <div class="action-item">
+                  <button>
+                    <svg>
+                      <use xlink:href="img/sprite.svg#icon-whisle"></use>
+                    </svg>
+                  </button>
+                  <h3>Персональная тренировка</h3>
+                </div>
+                <div class="action-item new">
+                  <button>
+                    <svg>
+                      <use xlink:href="img/sprite.svg#icon-plus"></use>
+                    </svg>
+                  </button>
+                  <h3>Добавить еще</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="grid-stack-item"
+           data-gs-x="0" data-gs-y="6"
+           data-gs-width="6" data-gs-height="9" data-gs-min-height="9" data-gs-min-width="3">
+        <div class="grid-stack-item-content widget widget-tasks">
+          <div class="header">
+            <div class="tabs-links">
+              <button class="item active" data-tab="first">
+                Сегодня
+                <span class="red">19</span>
+              </button>
+              <button class="item" data-tab="second">
+                Неделя
+                <span class="green">8</span>
+              </button>
+              <button class="item" data-tab="third">Завершенные</button>
+            </div>
+            <button class="new-task">
+              новая задача
+              <svg><use xlink:href="img/sprite.svg#icon-plus"></use></svg>
+            </button>
+            <div class="menu">
+              <button>
+                <svg>
+                  <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <!--widget body-->
+          <div class="body">
+            <!--this is for scrolling -->
+            <div class="scrollable-tabs">
+              <!--first tab-->
+              <div class="tab-content ui tab segment active" data-tab="first">
+                <table>
+                  <thead>
+                  <tr>
+                    <th class="title">Название</th>
+                    <th class="priority">Приоритет</th>
+                    <th class="date">Дата</th>
+                    <th class="user">Исполнитель</th>
+                    <th class="status">Статус</th>
+                    <th class="handles">&nbsp;</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="medium">Средний</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Петров Николай</a>
+                    </td>
+                    <td>Закрыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete active">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="low">Низкий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Сидорова Ирина</a>
+                    </td>
+                    <td>В процессе</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!--second tab-->
+              <div class="tab-content ui tab segment" data-tab="second">
+                <table>
+                  <thead>
+                  <tr>
+                    <th class="title">Название</th>
+                    <th class="priority">Приоритет</th>
+                    <th class="date">Дата</th>
+                    <th class="user">Исполнитель</th>
+                    <th class="status">Статус</th>
+                    <th class="handles">&nbsp;</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>
+                      <p>Это вкладка №2 Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!--third tab-->
+              <div class="tab-content ui tab segment" data-tab="third">
+                <table>
+                  <thead>
+                  <tr>
+                    <th class="title">Название</th>
+                    <th class="priority">Приоритет</th>
+                    <th class="date">Дата</th>
+                    <th class="user">Исполнитель</th>
+                    <th class="status">Статус</th>
+                    <th class="handles">&nbsp;</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>
+                      <input type="text" placeholder="Введите название задачи" value="Текущий текст задачи">
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>Позвонить Петрова Софья через 14 дней после активации 4 тренировки</p>
+                    </td>
+                    <td>
+                      <span class="high">Высокий</span>
+                    </td>
+                    <td>
+                      <div class="date">20.06.18</div>
+                    </td>
+                    <td>
+                      <a href="#" class="user">Антонова Ольга</a>
+                    </td>
+                    <td>Открыта</td>
+                    <td>
+                      <div class="handles">
+                        <button class="complete">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-check"></use>
+                          </svg>
+                        </button>
+                        <button class="menu">
+                          <svg>
+                            <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-stack-item"
+           data-gs-x="0" data-gs-y="16"
+           data-gs-width="3" data-gs-height="5" data-gs-min-height="5" data-gs-min-width="2">
+        <div class="grid-stack-item-content widget widget-actions">
+          <div class="header">
+            <h2>Быстрые действия</h2>
+            <!--<input type="text" placeholder="Введите название виджета" value="Быстрые действия">-->
+            <div class="menu">
+              <button>
+                <svg>
+                  <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="body">
+            <div class="row">
+              <div class="action-item">
+                <button>
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-user-plus"></use>
+                  </svg>
+                </button>
+                <h3>Новый клиент</h3>
+              </div>
+              <div class="action-item">
+                <button>
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-sale"></use>
+                  </svg>
+                </button>
+                <h3>Новая продажа</h3>
+              </div>
+              <div class="action-item">
+                <button>
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-th-list"></use>
+                  </svg>
+                </button>
+                <h3>Открыть посещение</h3>
+              </div>
+              <div class="action-item">
+                <button>
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-whisle"></use>
+                  </svg>
+                </button>
+                <h3>Персональная тренировка</h3>
+              </div>
+              <div class="action-item new">
+                <button>
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-plus"></use>
+                  </svg>
+                </button>
+                <h3>Добавить еще</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-stack-item"
+           data-gs-x="4" data-gs-y="16"
+           data-gs-width="3" data-gs-height="5" data-gs-min-height="5" data-gs-min-width="2">
+        <div class="grid-stack-item-content widget widget-actions">
+          <div class="header">
+            <h2>Быстрые действия</h2>
+            <!--<input type="text" placeholder="Введите название виджета" value="Быстрые действия">-->
+            <div class="menu">
+              <button>
+                <svg>
+                  <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="body">
+            <div class="row">
+              <div class="action-item">
+                <button>
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-user-plus"></use>
+                  </svg>
+                </button>
+                <h3>Новый клиент</h3>
+              </div>
+              <div class="action-item">
+                <button>
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-sale"></use>
+                  </svg>
+                </button>
+                <h3>Новая продажа</h3>
+              </div>
+              <div class="action-item">
+                <button>
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-th-list"></use>
+                  </svg>
+                </button>
+                <h3>Открыть посещение</h3>
+              </div>
+              <div class="action-item">
+                <button>
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-whisle"></use>
+                  </svg>
+                </button>
+                <h3>Персональная тренировка</h3>
+              </div>
+              <div class="action-item new">
+                <button>
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-plus"></use>
+                  </svg>
+                </button>
+                <h3>Добавить еще</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--home page end-->
+</div>
+<!--JavaScript-->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery.nicescroll.min.js"></script>
+<script src="js/semantic/tab.min.js"></script>
+<script src="js/svg4everybody.min.js"></script>
+<!--this is drag and drop scripts-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.3.0/gridstack.all.js"></script>
+<!--Main app JavaScript-->
+<script src="js/app-global.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

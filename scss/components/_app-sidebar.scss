@@ -1,0 +1,254 @@
+@charset "UTF-8";
+
+// ----------------------------------------------
+// app-sidebar styles
+// ----------------------------------------------
+
+#app-sidebar {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: $sidebar_width;
+    background: $color-main;
+    padding-top: 60px;
+    @include transition-single(margin, 300ms, ease-out, 0s);
+    @include media($tablet) {
+        margin-left: -$sidebar_width;
+    }
+    &.pushed {
+        margin-left: -$sidebar_width;
+        @include media($tablet) {
+            margin-left: 0;
+        }
+    }
+    .sb-scroll {
+        height: 100%;
+        padding-bottom: 20px;
+        position: relative;
+    }
+
+    // CRM logo
+    .crm-logo {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: block;
+        height: 60px;
+        line-height: 60px;
+        background: $color-main-dark;
+        border-right: 1px solid rgba($color-white, 0.1);
+        padding: 0 20px;
+        color: $color-gray-2;
+        font-size: 0;
+        overflow: hidden;
+        svg {
+            height: 22px;
+            width: 88px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .version {
+            display: inline-block;
+            vertical-align: middle;
+            position: relative;
+            color: $color-gray;
+            top: 2px;
+            padding-left: 8px;
+            font: {
+                size: 12px;
+                weight: 500;
+                style: italic;
+            }
+        }
+    }
+
+    // Client info
+    .client-info {
+        text-align: center;
+        padding: 20px 0;
+        .logo {
+            display: block;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            position: relative;
+            margin-bottom: 10px;
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: $color-main-dark;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
+
+            }
+            .img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background: no-repeat center;
+                @include background-cover();
+            }
+        }
+        .region {
+            line-height: 1;
+            font: {
+                size: 10px;
+                weight: 500;
+            }
+            letter-spacing: 0.2px;
+            text-transform: uppercase;
+            color: rgba($color-white, .3);
+        }
+    }
+
+    // Navigation
+    nav {
+        padding: 0 10px;
+        ul {
+            .sb-nav-item {
+                margin-bottom: 4px;
+            }
+            .sb-nav-sub {
+                display: none;
+                padding-top: 4px;
+                padding-bottom: 4px;
+                padding-left: 21px;
+                background-color: $color-main-dark;
+                border-bottom-right-radius: 2px;
+                border-bottom-left-radius: 2px;
+                .sub-item {
+                    display: block;
+                    position: relative;
+                    margin-bottom: 4px;
+                }
+                .sub-link {
+                    display: block;
+                    font-size: 13px;
+                    color: $color-gray-2;
+                    line-height: 30px;
+                    padding-left: 17px;
+                    white-space: nowrap;
+                    position: relative;
+                    transition: all 0.2s ease-in-out;
+                }
+                .sub-link::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: -3px;
+                    width: 6px;
+                    height: 1px;
+                    background-color: $color-white;
+                    opacity: .5;
+                    @include transition-single(all, 300ms, ease-in-out, 0s);
+                }
+                .sub-link:hover, .sub-link:focus, .sub-link.active {
+                    color: $color-blue;
+                }
+                .sub-link:hover::before, .sub-link:focus::before, .sub-link.active::before {
+                    width: 16px;
+                    left: -7px;
+                    opacity: 1;
+                    background-color: $color-blue;
+                }
+            }
+            .sb-nav-link {
+                display: block;
+                position: relative;
+                font: {
+                    size: 14px;
+                }
+                -webkit-border-radius: 2px;
+                -moz-border-radius: 2px;
+                border-radius: 2px;
+                padding: 0 11px 0 37px;
+                line-height: 40px;
+                color: $color-gray-2;
+                .badge {
+                    text-align: center;
+                    min-width: 18px;
+                    display: block;
+                    height: 16px;
+                    line-height: 18px;
+                    background: $color-green;
+                    position: absolute;
+                    top: 50%;
+                    right: 32px;
+                    margin-top: -8px;
+                    -webkit-border-radius: 2px;
+                    -moz-border-radius: 2px;
+                    border-radius: 2px;
+                    padding: 0 4px;
+                    overflow: hidden;
+                    font: {
+                        size: 12px;
+                        weight: 500;
+                    }
+                    color: $color-white;
+                    &.badge-red {
+                        background: $color-red;
+                    }
+                    &.badge-green {
+                        background: $color-green;
+                    }
+                    &.badge-blue {
+                        background: $color-blue;
+                    }
+                    &.badge-orange {
+                        background: $color-orange;
+                    }
+                }
+
+                &:hover, &:active {
+                    color: $color-white;
+                    background-color: $color-main-dark-2;
+                }
+                &.active {
+                    background-color: $color-green;
+                    background-image: linear-gradient(to right, $color-green 0%, $color-blue 100%);
+                    background-repeat: repeat-x;
+                    color: $color-white;
+                }
+                &.show-sub {
+                    background-color: $color-main-dark-3;
+                    color: $color-white;
+                    .down-icon {
+                        @include rotate(180);
+                    }
+                }
+                &.active + .sb-nav-sub {
+                    display: block;
+                }
+                svg.link-icon {
+                    position: absolute;
+                    width: 18px;
+                    height: 18px;
+                    top: 50%;
+                    left: 11px;
+                    margin-top: -9px;
+                }
+                svg.down-icon {
+                    position: absolute;
+                    width: 10px;
+                    height: 10px;
+                    top: 50%;
+                    right: 11px;
+                    margin-top: -5px;
+                    @include transition-single(transform, .3s, ease-in-out, 0s);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+// ----------------------------------------------
+// app-main-panel styles
+// ----------------------------------------------
+
+#app-main-panel {
+    margin-left: $sidebar_width;
+    padding: 30px;
+    will-change: transform;
+    @include double-transition(margin, 300ms, ease-out, 0s, transform, .3s, ease-out, 0s);
+    @include media($tablet) {
+        margin-left: 0;
+        padding: 20px;
+    }
+    @include media($mobile) {
+        padding: 15px;
+    }
+    &.pushed {
+        margin-left: 0;
+        @include media($tablet) {
+            @include translateX($sidebar_width)
+        }
+    }
+}
