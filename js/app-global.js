@@ -31,7 +31,7 @@ $(document).ready(function () {
 
     // Sidebar scroll
     var sbScroll = $('.sb-scroll').niceScroll({
-        emulatetouch: false, // false to fix ie bug!!!
+        emulatetouch: false, // Switch to false IE conflicts!!!
         cursorcolor: "rgba(255,255,255,.1)",
         grabcursorenabled: false, // hide grab cursor!
         background: "rgba(255,255,255,.05)",

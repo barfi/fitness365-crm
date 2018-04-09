@@ -19,7 +19,7 @@ $(document).ready(function () {
 
     // Tasks scroll widget
     var tabsScroll = $('.scrollable-tabs').niceScroll({
-        emulatetouch: true,
+        emulatetouch: false, // Switch to false IE conflicts!!!
         cursorcolor: "#adb5bd",
         grabcursorenabled: false, // hide grab cursor!
         background: "#e3e6e9",
