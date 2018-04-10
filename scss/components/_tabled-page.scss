@@ -532,6 +532,10 @@
             -webkit-border-radius: 4px;
             -moz-border-radius: 4px;
             border-radius: 4px;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
             &:last-child {
               margin-right: 0;
             }
@@ -560,6 +564,147 @@
                 background: #f5f6f8;
               }
             }
+          }
+          // Dropdown button
+          .dropdown {
+            vertical-align: middle;
+            display: inline-block;
+            cursor: pointer;
+            padding: 0 31px 0 21px;
+            height: 32px;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            user-select: none;
+            @include transition-single(background, 0.3s, ease-in-out, 0s);
+            font: {
+              size: 12px;
+            }
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            background: #f5f6f8;
+            color: #868e96;
+            &:hover, &:active, &.active {
+              background: #eef0f3;
+              color: #868e96;
+            }
+            &.active {
+              i {
+                @include scaleY(-1);
+              }
+            }
+            .title {
+              line-height: 32px;
+              font: {
+                weight: normal;
+                size: 14px;
+              }
+              color: #868e96;
+            }
+            i {
+              color: #adb5bd;
+              width: 10px;
+              height: 10px;
+              position: absolute;
+              top: 50%;
+              margin-top: -5px;
+              right: 14px;
+            }
+            .menu {
+              padding-top: 10px;
+              padding-bottom: 10px;
+              left: 0 !important;
+              border: none;
+              -webkit-border-radius: 4px;
+              -moz-border-radius: 4px;
+              border-radius: 4px;
+              -ms-user-select: none;
+              -moz-user-select: none;
+              -webkit-user-select: none;
+              user-select: none;
+              @include box-shadow-single(0, -1px, 18px, 0, rgba(#000, .15));
+              @include media($mobile) {
+                left: -39px !important;
+              }
+              &::after {
+                left: 44px !important;
+                border: none;
+                box-shadow: none;
+                @include media($mobile) {
+                  left: 44px !important;
+                }
+              }
+              .item {
+                font: {
+                  size: 12px;
+                  weight: 400;
+                }
+                line-height: 32px;
+                padding: 0 15px 0 40px !important;
+                color: $color-text;
+                &:hover, &.selected, &.active {
+                  background: #f3f4f6;
+                  svg {
+                    color: $color-text;
+                  }
+                }
+                svg {
+                  color: rgba(#868e96, 0.9);
+                  position: absolute;
+                  width: 16px;
+                  height: 16px;
+                  top: 50%;
+                  margin-top: -8px;
+                  left: 15px;
+                }
+              }
+
+            }
+            // modifiers
+            &.red {
+              background: rgba($color-red, 0.1);
+              color: $color-red;
+              .title {
+                color: $color-red;
+              }
+              i {
+                color: $color-red;
+              }
+              &:hover, &:active, &.active {
+                color: $color-red;
+                background: rgba($color-red, 0.2);
+              }
+            }
+            &.green {
+              background: rgba($color-green, 0.1);
+              color: $color-green;
+              .title {
+                color: $color-green;
+              }
+              i {
+                color: $color-green;
+              }
+              &:hover, &:active, &.active {
+                color: $color-green;
+                background: rgba($color-green, 0.2);
+              }
+            }
+            &.blue {
+              background: rgba($color-blue, 0.1);
+              color: $color-blue;
+              .title {
+                color: $color-blue;
+              }
+              i {
+                color: $color-blue;
+              }
+              &:hover, &:active, &.active {
+                color: $color-blue;
+                background: rgba($color-blue, 0.2);
+              }
+            }
+
           }
         }
         .pagination {

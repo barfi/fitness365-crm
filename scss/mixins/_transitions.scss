@@ -5,7 +5,7 @@
 // -----------------------------------------------------
 //TODO: edit this later!
 
-// example: @include single-transition(background, 1s, ease-in-out, 0s);
+// example: @include transition-single(background, 1s, ease-in-out, 0s);
 
 @mixin transition-single($property, $duration, $timing-function, $delay: null) {
     @if $delay != null {
