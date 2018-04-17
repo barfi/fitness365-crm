@@ -10,10 +10,13 @@
     <link rel="stylesheet" href="css/dropdown.css">
     <link rel="stylesheet" href="css/table.css">
     <link rel="stylesheet" href="css/transition.css">
+    <link rel="stylesheet" href="css/dimmer.min.css">
+    <link rel="stylesheet" href="css/popup.min.css">
+    <link rel="stylesheet" href="css/calendar.min.css">
     <!--Custom markup styles-->
     <link rel="stylesheet" href="css/app.css">
 </head>
-<body>
+<body class="dimmable">
 <!--app header-->
 <div id="app-header" class="pushable">
     <div class="fl-l">
@@ -238,14 +241,26 @@ Here for avoiding child fixed element problem with transformed parent
             <div class="tp-header-actions">
                 <!--modifier class 'filtered' for red color-->
                 <button id="btn-filter-toggle" class="filtered">
-                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-filter"></use></svg></i>
+                    <i class="icon">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#icon-filter"></use>
+                        </svg>
+                    </i>
                 </button>
                 <!--modifier class 'spin' for animation-->
                 <button class="">
-                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-refresh"></use></svg></i>
+                    <i class="icon">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#icon-refresh"></use>
+                        </svg>
+                    </i>
                 </button>
                 <button class="special">
-                    <i class="icon-spec"><svg><use xlink:href="img/sprite.svg#icon-user-plus"></use></svg></i>
+                    <i class="icon-spec">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#icon-user-plus"></use>
+                        </svg>
+                    </i>
                     <span>Новый клиент</span>
                 </button>
             </div>
@@ -494,6 +509,7 @@ Here for avoiding child fixed element problem with transformed parent
                 <button class="red">Удалить</button>
                 <button>Позвонить</button>
                 <button class="green">Написать</button>
+
                 <button disabled>Не активно</button>
                 <!--semantic dropdown-->
                 <!--Buttons modifiers classes: red, green-->
@@ -584,7 +600,7 @@ Here for avoiding child fixed element problem with transformed parent
     <!--clients page markup START-->
     <div id="app-clients-page" class="tabled-page tabled-page-pt">
         <div class="tp-body">
-            <table class="ui sortable celled table ">
+            <table class="ui sortable celled table tp-table">
                 <thead>
                 <tr>
                     <!--NOTE: inline styles of th's (min-width) are optional & individual for each th-->
@@ -671,13 +687,13 @@ Here for avoiding child fixed element problem with transformed parent
                                     </svg>
                                 </i>
                                 <div class="menu">
-                                    <a class="item">
+                                    <a class="item smw-open">
                                         <svg>
                                             <use xlink:href="img/sprite.svg#icon-eye"></use>
                                         </svg>
                                         Просмотреть
                                     </a>
-                                    <a class="item">
+                                    <a class="item smw-open">
                                         <svg>
                                             <use xlink:href="img/sprite.svg#icon-pencil"></use>
                                         </svg>
@@ -1681,6 +1697,2425 @@ Here for avoiding child fixed element problem with transformed parent
     <!--clients page markup END-->
 </div>
 
+
+<!---slide modal window client edit profile-->
+<div class="slide-modal-window modal-client-details">
+    <div class="smw-header">
+        <div class="smw-title">
+            <h3>
+                <i class="title-icon">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#icon-user"></use>
+                    </svg>
+                </i>
+                Иванов Иван Иванович
+            </h3>
+            <button class="smw-close">
+                <svg>
+                    <use xlink:href="img/sprite.svg#icon-circled-cross"></use>
+                </svg>
+            </button>
+        </div>
+        <div class="smw-actions">
+
+            <button class="smw-btn icon default">
+                <i>
+                    <svg>
+                        <use xlink:href="img/sprite.svg#icon-comes"></use>
+                    </svg>
+                </i>
+                <span>Посещение</span>
+            </button>
+            <button class="smw-btn icon default">
+                <i>
+                    <svg>
+                        <use xlink:href="img/sprite.svg#icon-code"></use>
+                    </svg>
+                </i>
+                <span>Продажа</span>
+            </button>
+            <button class="smw-btn icon no-text default">
+                <i>
+                    <svg>
+                        <use xlink:href="img/sprite.svg#icon-user-card"></use>
+                    </svg>
+                </i>
+            </button>
+            <div class="ui dropdown item icon pointing left top smw-dropdown smw-dropdown-simple hide-on-tablet">
+                <i class="icon">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#icon-print"></use>
+                    </svg>
+                </i>
+                <span class="title">Печать</span>
+                <i class="arrow">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                    </svg>
+                </i>
+                <div class="menu">
+                    <a class="item">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#icon-print"></use>
+                        </svg>
+                        Стильно
+                    </a>
+                    <a class="item">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#icon-print"></use>
+                        </svg>
+                        Модно
+                    </a>
+                    <a class="item">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#icon-print"></use>
+                        </svg>
+                        Молодежно
+                    </a>
+                </div>
+            </div>
+            <div class="smw-divider"></div>
+            <button class="smw-btn icon green hide-on-mobile">
+                <i>
+                    <svg>
+                        <use xlink:href="img/sprite.svg#icon-phone"></use>
+                    </svg>
+                </i>
+                <span>Позвонить</span>
+            </button>
+            <button class="smw-btn icon orange">
+                <i>
+                    <svg>
+                        <use xlink:href="img/sprite.svg#icon-mail"></use>
+                    </svg>
+                </i>
+                <span>Написать</span>
+            </button>
+            <button class="smw-btn icon blue hide-on-tablet">
+                <i>
+                    <svg>
+                        <use xlink:href="img/sprite.svg#icon-calendar-2"></use>
+                    </svg>
+                </i>
+                <span>Создать задачу</span>
+            </button>
+            <div class="fl-r">
+                <button class="smw-btn icon no-text green">
+                    <i>
+                        <svg>
+                            <use xlink:href="img/sprite.svg#icon-check-solid"></use>
+                        </svg>
+                    </i>
+                </button>
+                <button class="smw-btn icon no-text red">
+                    <i>
+                        <svg>
+                            <use xlink:href="img/sprite.svg#icon-trash"></use>
+                        </svg>
+                    </i>
+                </button>
+            </div>
+        </div>
+        <div class="smw-tabs">
+            <div class="smw-tabs-links smw-hr-scroll">
+                <a class="item active" data-tab="tab-1">Основное</a>
+                <a class="item" data-tab="tab-2">Услуги</a>
+                <a class="item" data-tab="tab-3">Карты</a>
+                <a class="item" data-tab="tab-4">Посещения</a>
+                <a class="item" data-tab="tab-5">Записи</a>
+            </div>
+        </div>
+    </div>
+    <div class="smw-body">
+        <!--tab-1-->
+        <div class="tab-content ui tab segment active" data-tab="tab-1">
+            <div class="smw-scrollable-tabs">
+                <div class="mcd-profile-card">
+                    <div class="mcd-card-col left">
+                        <div class="mcd-avatar">
+
+                            <!-- Set this for default-->
+                            <div class="ava-default">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#ava-default"></use>
+                                </svg>
+                            </div>
+                            <!-- Set this if isset -->
+                            <!--<img src="img/client-ava-test.jpg" alt="ava">-->
+
+                            <div class="controls">
+                                <button class="delete"></button>
+                                <div class="actions">
+                                    <button>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-camera"></use>
+                                        </svg>
+                                        <span>Фото с камеры</span>
+                                    </button>
+                                    <button>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-folder"></use>
+                                        </svg>
+                                        <span>Загрузить с диска</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mcd-card-status">
+                            <!--disabled-->
+                            <div class="status">
+                                <div class="icon">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-user-card"></use>
+                                    </svg>
+                                </div>
+                                <p>Нет активной карты</p>
+                            </div>
+                            <!--money debt-->
+                            <div class="status debt">
+                                <div class="icon">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-dollar"></use>
+                                    </svg>
+                                </div>
+                                <p>Есть задолжность</p>
+                            </div>
+                            <!--active-->
+                            <div class="status active">
+                                <div class="icon">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-user-card"></use>
+                                    </svg>
+                                </div>
+                                <p>Клип-карта на 30 персональных тренировок</p>
+                                <div class="additional">
+                                    <span><i><svg><use xlink:href="img/sprite.svg#icon-calendar"></use></svg></i>18.07.2019</span>
+                                    <span><i><svg><use
+                                    xlink:href="img/sprite.svg#icon-comes"></use></svg></i>7 из 30</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                    </div>
+                    <div class="mcd-card-col right">
+                        <div class="mcd-form-section">
+                            <div class="form-header">
+                                <h4>Основная информация</h4>
+                                <button class="mcd-fs-toggle">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="form-body">
+                                <div class="row clear">
+                                    <!--Firs column-->
+                                    <div class="col-half">
+                                        <div class="smw-form-field">
+                                            <label>Фамилия <sup>*</sup></label>
+                                            <input type="text" placeholder="Фамилия клиента" value="Иванов">
+                                        </div>
+                                        <div class="smw-form-field">
+                                            <label>Имя</label>
+                                            <input type="text" placeholder="Имя клиента" value="Иван">
+                                        </div>
+                                        <div class="smw-form-field">
+                                            <label>Отчество</label>
+                                            <input type="text" placeholder="Отчество клиента" value="Иванович">
+                                        </div>
+                                        <div class="row clear">
+                                            <div class="col-half">
+                                                <div class="smw-form-field">
+                                                    <label>Дата рождения</label>
+                                                    <div class="ui calendar smw-calendar">
+                                                        <div class="ui input icon left">
+                                                            <i class="icon-calendar">
+                                                                <svg>
+                                                                    <use
+                                                                    xlink:href="img/sprite.svg#icon-calendar"></use>
+                                                                </svg>
+                                                            </i>
+                                                            <input type="text" placeholder="" value="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-forth">
+                                                <div class="smw-form-field">
+                                                    <label>Возраст</label>
+                                                    <input type="text" value="29" readonly>
+                                                </div>
+                                            </div>
+                                            <div class="col-forth">
+                                                <div class="smw-form-field">
+                                                    <label>Пол</label>
+                                                    <div class="ui dropdown search selection smw-input-dropdown">
+                                                        <input type="hidden">
+                                                        <i class="dropdown icon"></i>
+                                                        <div class="default text">Пол</div>
+                                                        <div class="menu">
+                                                            <div class="item" data-value=" ">Пол</div>
+                                                            <div class="item" data-value="val1">Муж.</div>
+                                                            <div class="item" data-value="val2">Жен.</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="smw-form-field">
+                                            <label>Удостоверение личности</label>
+                                            <input type="text" placeholder="Укажите документ" value="Паспорт">
+                                        </div>
+                                    </div>
+                                    <div class="col-half">
+                                        <div class="smw-form-field">
+                                            <label>Мобильный</label>
+                                            <input type="text" placeholder="Номер для связи" value="88005553535">
+                                        </div>
+                                        <div class="smw-form-field">
+                                            <label>E-mail</label>
+                                            <input type="text" placeholder="Почтовый адрес" value="webpack@next.com">
+                                        </div>
+                                        <div class="smw-form-field">
+                                            <label>Статус</label>
+                                            <div class="ui dropdown search selection smw-input-dropdown">
+                                                <input type="hidden">
+                                                <i class="dropdown icon"></i>
+                                                <div class="default text">Выберите статус</div>
+                                                <div class="menu">
+                                                    <div class="item" data-value=" ">Выберите статус</div>
+                                                    <div class="item" data-value="val1">Интересующийся</div>
+                                                    <div class="item" data-value="val2">Клиент</div>
+                                                    <div class="item" data-value="val3">Неактивный</div>
+                                                    <div class="item" data-value="val4">Постоянный</div>
+                                                    <div class="item" data-value="val5">Потенциальный</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="smw-form-field">
+                                            <label>Тип</label>
+                                            <div class="ui dropdown search selection smw-input-dropdown">
+                                                <input type="hidden">
+                                                <i class="dropdown icon"></i>
+                                                <i class="delete icon"></i>
+                                                <div class="default text">Выберите тип</div>
+                                                <div class="menu">
+                                                    <div class="item" data-value=" ">Выберите тип</div>
+                                                    <div class="item" data-value="val1">Пенсионер</div>
+                                                    <div class="item" data-value="val2">Потенциальный</div>
+                                                    <div class="item" data-value="val3">Студент</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="smw-form-field">
+                                            <label>Промокод</label>
+                                            <input type="text" placeholder="Промокод" value="fitness365">
+                                        </div>
+                                    </div>
+                                    <div class="col-full">
+                                        <div class="smw-form-field">
+                                            <label>Заметка</label>
+                                            <textarea class="mcd-textarea" rows="3"
+                                                      placeholder="Заметка по клиенту"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mcd-form-section">
+                            <div class="form-header">
+                                <h4>Дополнительная информация</h4>
+                                <button class="mcd-fs-toggle">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="form-body">
+                                <div class="row clear">
+                                    <!--Firs column-->
+                                    <div class="col-half">
+                                        <div class="smw-form-field">
+                                            <label>Источник</label>
+                                            <div class="ui dropdown search selection smw-input-dropdown">
+                                                <input type="hidden">
+                                                <i class="dropdown icon"></i>
+                                                <div class="default text">Укажите источник</div>
+                                                <div class="menu">
+                                                    <div class="item" data-value=" ">Укажите источник</div>
+                                                    <div class="item" data-value="val1">Социальная сеть</div>
+                                                    <div class="item" data-value="val2">Реклама</div>
+                                                    <div class="item" data-value="val3">Посоветовали друзья</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="smw-form-field">
+                                            <label>Договор</label>
+                                            <input type="text" placeholder="Укажите договор" value="Договор на 3 года">
+                                        </div>
+                                        <div class="smw-form-field">
+                                            <label>Менеджер</label>
+                                            <div class="ui dropdown search selection smw-input-dropdown">
+                                                <input type="hidden">
+                                                <i class="dropdown icon"></i>
+                                                <div class="default text">Менеджер</div>
+                                                <div class="menu">
+                                                    <div class="item" data-value=" ">Менеджер</div>
+                                                    <div class="item" data-value="val1">Нежный Андрей</div>
+                                                    <div class="item" data-value="val2">Ласковый Николай</div>
+                                                    <div class="item" data-value="val3">Робкий Максим</div>
+                                                    <div class="item" data-value="val4">Веселая Наталья</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="smw-form-field">
+                                            <label>Организация / Филиал</label>
+                                            <div class="ui dropdown search selection smw-input-dropdown">
+                                                <input type="hidden">
+                                                <i class="dropdown icon"></i>
+                                                <div class="default text">Организация</div>
+                                                <div class="menu">
+                                                    <div class="item" data-value=" ">Организация</div>
+                                                    <div class="item" data-value="val1">Хабаровск</div>
+                                                    <div class="item" data-value="val2">Филиал</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="smw-form-field">
+                                            <input type="checkbox" id="check-box-1" hidden>
+                                            <label for="check-box-1" class="checkboxed">
+                                                <i>
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                                                    </svg>
+                                                </i>
+                                                <span>Может посещать все филиалы</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-half">
+                                        <div class="smw-form-field">
+                                            <label>Страна</label>
+                                            <div class="ui dropdown search selection smw-input-dropdown">
+                                                <input type="hidden">
+                                                <i class="dropdown icon"></i>
+                                                <div class="default text">Выберите страну</div>
+                                                <div class="menu">
+                                                    <div class="item" data-value=" ">Выберите страну</div>
+                                                    <div class="item" data-value="val1">Россия</div>
+                                                    <div class="item" data-value="val2">Маленькая страна</div>
+                                                    <div class="item" data-value="val3">Америка</div>
+                                                    <div class="item" data-value="val3">Украина</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="smw-form-field">
+                                            <label>Область</label>
+                                            <input type="text" placeholder="Область" value="Ленинградская обл.">
+                                        </div>
+                                        <div class="smw-form-field">
+                                            <label>Населенный пункт</label>
+                                            <input type="text" placeholder="Населенный пункт" value="пос. Вырица">
+                                        </div>
+                                        <div class="row clear">
+                                            <div class="col-two-thirds">
+                                                <div class="smw-form-field">
+                                                    <label>Улица</label>
+                                                    <input type="text" placeholder="Улица" value="ул. Красного знамени">
+                                                </div>
+                                            </div>
+                                            <div class="col-third">
+                                                <div class="smw-form-field">
+                                                    <label>Индекс</label>
+                                                    <input type="text" placeholder="Индекс" value="699806">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--tab-2-->
+        <div class="tab-content ui tab segment" data-tab="tab-2">
+            <div class="smw-noscroll-point">
+                <div class="smw-point-inner">
+                    <!--table controls-->
+                    <div class="smw-tables-controls">
+                        <div class="options">
+                            <div class="check-all">
+                                <input id="smw-check-all-2" type="checkbox" hidden>
+                                <label for="smw-check-all-2">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="constructor">
+                                <div class="ui dropdown smw-dropdown smw-dropdown-con item icon pointing left top">
+                                    <i>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-gear"></use>
+                                        </svg>
+                                    </i>
+                                    <div class="menu">
+                                        <div class="item">
+                                            <input type="checkbox" id="smw_tc_1-2" hidden>
+                                            <label for="smw_tc_1-2">
+                                                <span class="cb">
+                                                    <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                                </span>
+                                                <span class="text">Услуга</span>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input type="checkbox" id="smw_tc_2-2" hidden>
+                                            <label for="smw_tc_2-2">
+                                                <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                                <span class="text">Доступное кол-во</span>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input type="checkbox" id="smw_tc_3-2" hidden>
+                                            <label for="smw_tc_3-2">
+                                                <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                                <span class="text">Статус</span>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input type="checkbox" id="smw_tc_4-2" hidden>
+                                            <label for="smw_tc_4-2">
+                                                <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                                <span class="text">Дата окончания</span>
+                                            </label>
+                                        </div>
+                                        <!--Form footer-->
+                                        <div class="clear"></div>
+                                        <a class="item extra">
+                                            <span class="text">Показать все</span>
+                                        </a>
+                                        <a class="item extra">
+                                            <span class="text">Скрыть все</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <!--has modifier class 'filtered'-->
+                            <button class="smw-btn icon no-text default smw-filter-toggle">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-filter"></use>
+                                    </svg>
+                                </i>
+                            </button>
+                            <button class="smw-btn icon no-text default hide-on-mobile">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-refresh"></use>
+                                    </svg>
+                                </i>
+                            </button>
+                            <div
+                            class="ui dropdown item icon pointing left top smw-dropdown smw-dropdown-simple hide-on-tablet">
+                                <i class="icon">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-print"></use>
+                                    </svg>
+                                </i>
+                                <span class="title">Печать</span>
+                                <i class="arrow">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                                    </svg>
+                                </i>
+                                <div class="menu">
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-print"></use>
+                                        </svg>
+                                        Стильно
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-print"></use>
+                                        </svg>
+                                        Модно
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-print"></use>
+                                        </svg>
+                                        Молодежно
+                                    </a>
+                                </div>
+                            </div>
+                            <button class="smw-btn icon green hide-on-mobile">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-play"></use>
+                                    </svg>
+                                </i>
+                                <span>Активировать</span>
+                            </button>
+                        </div>
+                        <div class="pagination">
+                            <div class="count-select">
+                                <span>На странице:</span>
+                                <!--semantic dropdown-->
+                                <div class="ui dropdown smw-dropdown smw-dropdown-tc labeled button pointing">
+                                    <span class="text">100</span>
+                                    <i class="angle down">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                                        </svg>
+                                    </i>
+                                    <div class="menu">
+                                        <div class="item">10</div>
+                                        <div class="item">25</div>
+                                        <div class="item">50</div>
+                                        <div class="item">100</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="navs">
+                                <button class="prev" title="Двойной клик в начало">
+                                    <i class="icon">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                                <span>2 из 12</span>
+                                <button class="next" title="Двойной клик в конец">
+                                    <i class="icon">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Toggled filters-->
+                    <div class="smw-tables-filters">
+                        <div class="filter-box">
+                            <div class="f-head">
+                                <h4>Фильтр #1</h4>
+                                <input type="checkbox" id="smw_fr_1" hidden>
+                                <label for="smw_fr_1">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-equal-not"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <select class="ui search dropdown smw-filter-select" multiple>
+                                <option value=""></option>
+                                <option value="value1">Один</option>
+                                <option value="value2">Два</option>
+                                <option value="value3">Три</option>
+                            </select>
+                        </div>
+                        <div class="filter-box">
+                            <div class="f-head">
+                                <h4>Фильтр #2</h4>
+                                <input type="checkbox" id="smw_fr_2" hidden>
+                                <label for="smw_fr_2">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-equal-not"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <select class="ui search dropdown smw-filter-select" multiple>
+                                <option value=""></option>
+                                <option value="value1">Один</option>
+                                <option value="value2">Два</option>
+                                <option value="value3">Три</option>
+                            </select>
+                        </div>
+                        <div class="filter-btns">
+                            <button class="green">Сохранить</button>
+                            <button>Очистить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="smw-scrollable-tabs">
+                <div class="smw-table-wrapper">
+                    <table class="ui sortable celled table smw-table">
+                        <thead>
+                        <tr>
+                            <!--NOTE: inline styles of th's (min-width) are optional & individual for each th-->
+                            <th class="no-sort tr-handles">&nbsp;</th>
+                            <th class="sorted descending" style="min-width: 200px">
+                                <span>
+                                    Услуга
+                                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                                </span>
+                            </th>
+                            <th class="">
+                                <span>
+                                    Доступное кол-во
+                                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                                </span>
+                            </th>
+                            <th class="">
+                                <span>
+                                    Статус
+                                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                                </span>
+                            </th>
+                            <th class="" style="min-width: 140px">
+                                <span>
+                                    Дата окончания
+                                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                                </span>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!--1 row-->
+                        <tr>
+                            <td>
+                                <div class="handles">
+                                    <div class="select">
+                                        <input id="smw-tr-1-1" type="checkbox" hidden>
+                                        <label for="smw-tr-1-1">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                    <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                        <i>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                            </svg>
+                                        </i>
+                                        <div class="menu">
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-play"></use>
+                                                </svg>
+                                                Активировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                </svg>
+                                                Редактировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                </svg>
+                                                Удалить услугу
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Абонемент йога на месяц не более 10 посещений</td>
+                            <td>18</td>
+                            <td><span class="red">Не активирована</span></td>
+                            <td><span class="date">20.06.18</span></td>
+                        </tr>
+                        <!--2 row-->
+                        <tr class="selected">
+                            <td>
+                                <div class="handles">
+                                    <div class="select">
+                                        <input id="smw-tr-1-2" type="checkbox" hidden checked>
+                                        <label for="smw-tr-1-2">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                    <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                        <i>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                            </svg>
+                                        </i>
+                                        <div class="menu">
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-play"></use>
+                                                </svg>
+                                                Активировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                </svg>
+                                                Редактировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                </svg>
+                                                Удалить услугу
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Абонемент йога на месяц не более 10 посещений</td>
+                            <td>18</td>
+                            <td><span class="green">Активирована</span></td>
+                            <td><span class="date">20.04.18</span></td>
+                        </tr>
+                        <!--3 row-->
+                        <tr>
+                            <td>
+                                <div class="handles">
+                                    <div class="select">
+                                        <input id="smw-tr-1-3" type="checkbox" hidden>
+                                        <label for="smw-tr-1-3">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                    <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                        <i>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                            </svg>
+                                        </i>
+                                        <div class="menu">
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-play"></use>
+                                                </svg>
+                                                Активировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                </svg>
+                                                Редактировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                </svg>
+                                                Удалить услугу
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Абонемент йога на месяц не более 10 посещений</td>
+                            <td>18</td>
+                            <td><span class="blue">Заморожена</span></td>
+                            <td><span class="date">20.06.18</span></td>
+                        </tr>
+                        <!--4 row-->
+                        <tr>
+                            <td>
+                                <div class="handles">
+                                    <div class="select">
+                                        <input id="smw-tr-1-4" type="checkbox" hidden>
+                                        <label for="smw-tr-1-4">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                    <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                        <i>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                            </svg>
+                                        </i>
+                                        <div class="menu">
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-play"></use>
+                                                </svg>
+                                                Активировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                </svg>
+                                                Редактировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                </svg>
+                                                Удалить услугу
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Абонемент йога на месяц не более 10 посещений</td>
+                            <td>18</td>
+                            <td><span class="orange">Приостановлена</span></td>
+                            <td><span class="date">20.06.18</span></td>
+                        </tr>
+                        <!--5 row-->
+                        <tr>
+                            <td>
+                                <div class="handles">
+                                    <div class="select">
+                                        <input id="smw-tr-1-5" type="checkbox" hidden>
+                                        <label for="smw-tr-1-5">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                    <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                        <i>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                            </svg>
+                                        </i>
+                                        <div class="menu">
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-play"></use>
+                                                </svg>
+                                                Активировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                </svg>
+                                                Редактировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                </svg>
+                                                Удалить услугу
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Абонемент йога на месяц не более 20 посещений</td>
+                            <td>12</td>
+                            <td><span class="disable">Закончена</span></td>
+                            <td><span class="date">10.06.18</span></td>
+                        </tr>
+                        <!--6 row-->
+                        <tr>
+                            <td>
+                                <div class="handles">
+                                    <div class="select">
+                                        <input id="smw-tr-1-6" type="checkbox" hidden>
+                                        <label for="smw-tr-1-6">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                    <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                        <i>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                            </svg>
+                                        </i>
+                                        <div class="menu">
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-play"></use>
+                                                </svg>
+                                                Активировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                </svg>
+                                                Редактировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                </svg>
+                                                Удалить услугу
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Абонемент бассейн на месяц грандиозных заплывов</td>
+                            <td>30</td>
+                            <td><span class="disable">Закончена</span></td>
+                            <td><span class="date">06.06.18</span></td>
+                        </tr>
+                        <!--7 row-->
+                        <tr class="selected">
+                            <td>
+                                <div class="handles">
+                                    <div class="select">
+                                        <input id="smw-tr-1-7" type="checkbox" hidden checked>
+                                        <label for="smw-tr-1-7">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                    <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                        <i>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                            </svg>
+                                        </i>
+                                        <div class="menu">
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-play"></use>
+                                                </svg>
+                                                Активировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                </svg>
+                                                Редактировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                </svg>
+                                                Удалить услугу
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Абонемент бокс для женщин, 1 занятие</td>
+                            <td>1</td>
+                            <td><span class="green">Активирована</span></td>
+                            <td><span class="date">20.02.18</span></td>
+                        </tr>
+
+                        <!--8 row-->
+                        <tr>
+                            <td>
+                                <div class="handles">
+                                    <div class="select">
+                                        <input id="smw-tr-1-8" type="checkbox" hidden>
+                                        <label for="smw-tr-1-8">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                    <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                        <i>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                            </svg>
+                                        </i>
+                                        <div class="menu">
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-play"></use>
+                                                </svg>
+                                                Активировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                </svg>
+                                                Редактировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                </svg>
+                                                Удалить услугу
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Абонемент йога на месяц не более 10 посещений</td>
+                            <td>18</td>
+                            <td><span class="blue">Заморожена</span></td>
+                            <td><span class="date">20.06.18</span></td>
+                        </tr>
+                        <!--9 row-->
+                        <tr>
+                            <td>
+                                <div class="handles">
+                                    <div class="select">
+                                        <input id="smw-tr-1-9" type="checkbox" hidden>
+                                        <label for="smw-tr-1-9">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                    <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                        <i>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                            </svg>
+                                        </i>
+                                        <div class="menu">
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-play"></use>
+                                                </svg>
+                                                Активировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                </svg>
+                                                Редактировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                </svg>
+                                                Удалить услугу
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Абонемент йога на месяц не более 10 посещений</td>
+                            <td>18</td>
+                            <td><span class="orange">Приостановлена</span></td>
+                            <td><span class="date">20.06.18</span></td>
+                        </tr>
+                        <!--10 row-->
+                        <tr>
+                            <td>
+                                <div class="handles">
+                                    <div class="select">
+                                        <input id="smw-tr-1-10" type="checkbox" hidden>
+                                        <label for="smw-tr-1-10">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                    <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                        <i>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                            </svg>
+                                        </i>
+                                        <div class="menu">
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-play"></use>
+                                                </svg>
+                                                Активировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                </svg>
+                                                Редактировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                </svg>
+                                                Удалить услугу
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Абонемент йога на месяц не более 20 посещений</td>
+                            <td>12</td>
+                            <td><span class="disable">Закончена</span></td>
+                            <td><span class="date">10.06.18</span></td>
+                        </tr>
+                        <!--11 row-->
+                        <tr>
+                            <td>
+                                <div class="handles">
+                                    <div class="select">
+                                        <input id="smw-tr-1-11" type="checkbox" hidden>
+                                        <label for="smw-tr-1-11">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                    <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                        <i>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                            </svg>
+                                        </i>
+                                        <div class="menu">
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-play"></use>
+                                                </svg>
+                                                Активировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                </svg>
+                                                Редактировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                </svg>
+                                                Удалить услугу
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Абонемент бассейн на месяц грандиозных заплывов</td>
+                            <td>30</td>
+                            <td><span class="disable">Закончена</span></td>
+                            <td><span class="date">06.06.18</span></td>
+                        </tr>
+                        <!--12 row-->
+                        <tr>
+                            <td>
+                                <div class="handles">
+                                    <div class="select">
+                                        <input id="smw-tr-1-12" type="checkbox" hidden>
+                                        <label for="smw-tr-1-12">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                    <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                        <i>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                            </svg>
+                                        </i>
+                                        <div class="menu">
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-play"></use>
+                                                </svg>
+                                                Активировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                </svg>
+                                                Редактировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                </svg>
+                                                Удалить услугу
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Абонемент йога на месяц не более 10 посещений</td>
+                            <td>18</td>
+                            <td><span class="blue">Заморожена</span></td>
+                            <td><span class="date">20.06.18</span></td>
+                        </tr>
+                        <!--13 row-->
+                        <tr>
+                            <td>
+                                <div class="handles">
+                                    <div class="select">
+                                        <input id="smw-tr-1-13" type="checkbox" hidden>
+                                        <label for="smw-tr-1-13">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                    <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                        <i>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                            </svg>
+                                        </i>
+                                        <div class="menu">
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-play"></use>
+                                                </svg>
+                                                Активировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                </svg>
+                                                Редактировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                </svg>
+                                                Удалить услугу
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Абонемент йога на месяц не более 10 посещений</td>
+                            <td>18</td>
+                            <td><span class="orange">Приостановлена</span></td>
+                            <td><span class="date">20.06.18</span></td>
+                        </tr>
+                        <!--14 row-->
+                        <tr>
+                            <td>
+                                <div class="handles">
+                                    <div class="select">
+                                        <input id="smw-tr-1-14" type="checkbox" hidden>
+                                        <label for="smw-tr-1-14">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                    <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                        <i>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                            </svg>
+                                        </i>
+                                        <div class="menu">
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-play"></use>
+                                                </svg>
+                                                Активировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                </svg>
+                                                Редактировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                </svg>
+                                                Удалить услугу
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Абонемент йога на месяц не более 20 посещений</td>
+                            <td>12</td>
+                            <td><span class="disable">Закончена</span></td>
+                            <td><span class="date">10.06.18</span></td>
+                        </tr>
+                        <!--15 row-->
+                        <tr>
+                            <td>
+                                <div class="handles">
+                                    <div class="select">
+                                        <input id="smw-tr-1-15" type="checkbox" hidden>
+                                        <label for="smw-tr-1-15">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                    <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                        <i>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                            </svg>
+                                        </i>
+                                        <div class="menu">
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-play"></use>
+                                                </svg>
+                                                Активировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                </svg>
+                                                Редактировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                </svg>
+                                                Удалить услугу
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>Абонемент бассейн на месяц грандиозных заплывов</td>
+                            <td>30</td>
+                            <td><span class="disable">Закончена</span></td>
+                            <td><span class="date">06.06.18</span></td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--tab-3-->
+        <div class="tab-content ui tab segment" data-tab="tab-3">
+            <div class="smw-noscroll-point">
+                <div class="smw-point-inner">
+
+                    <!--table controls-->
+                    <div class="smw-tables-controls">
+
+                        <div class="options">
+                            <div class="check-all">
+                                <input id="smw-check-all-3" type="checkbox" hidden>
+                                <label for="smw-check-all-3">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="constructor">
+                                <div class="ui dropdown smw-dropdown smw-dropdown-con item icon pointing left top">
+                                    <i>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-gear"></use>
+                                        </svg>
+                                    </i>
+                                    <div class="menu">
+                                        <div class="item">
+                                            <input type="checkbox" id="smw_tc_1-3" hidden>
+                                            <label for="smw_tc_1-3">
+                                                <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                                <span class="text">Номер</span>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input type="checkbox" id="smw_tc_2-3" hidden>
+                                            <label for="smw_tc_2-3">
+                                                <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                                <span class="text">Тип</span>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input type="checkbox" id="smw_tc_3-3" hidden>
+                                            <label for="smw_tc_3-3">
+                                                <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                                <span class="text">Группа</span>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input type="checkbox" id="smw_tc_4-3" hidden>
+                                            <label for="smw_tc_4-3">
+                                                <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                                <span class="text">Дата окончания</span>
+                                            </label>
+                                        </div>
+                                        <!--Form footer-->
+                                        <div class="clear"></div>
+                                        <a class="item extra">
+                                            <span class="text">Показать все</span>
+                                        </a>
+                                        <a class="item extra">
+                                            <span class="text">Скрыть все</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <button class="smw-btn icon no-text default smw-filter-toggle">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-filter"></use>
+                                    </svg>
+                                </i>
+                            </button>
+                            <button class="smw-btn icon no-text default hide-on-mobile">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-refresh"></use>
+                                    </svg>
+                                </i>
+                            </button>
+                            <div
+                            class="ui dropdown item icon pointing left top smw-dropdown smw-dropdown-simple hide-on-tablet">
+                                <i class="icon">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-print"></use>
+                                    </svg>
+                                </i>
+                                <span class="title">Печать</span>
+                                <i class="arrow">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                                    </svg>
+                                </i>
+                                <div class="menu">
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-print"></use>
+                                        </svg>
+                                        Стильно
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-print"></use>
+                                        </svg>
+                                        Модно
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-print"></use>
+                                        </svg>
+                                        Молодежно
+                                    </a>
+                                </div>
+                            </div>
+                            <button class="smw-btn icon green hide-on-mobile">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-play"></use>
+                                    </svg>
+                                </i>
+                                <span>Активировать</span>
+                            </button>
+                        </div>
+                        <div class="pagination">
+                            <div class="count-select">
+                                <span>На странице:</span>
+                                <!--semantic dropdown-->
+                                <div class="ui dropdown smw-dropdown smw-dropdown-tc labeled button pointing">
+                                    <span class="text">100</span>
+                                    <i class="angle down">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                                        </svg>
+                                    </i>
+                                    <div class="menu">
+                                        <div class="item">10</div>
+                                        <div class="item">25</div>
+                                        <div class="item">50</div>
+                                        <div class="item">100</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="navs">
+                                <button class="prev" title="Двойной клик в начало">
+                                    <i class="icon">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                                <span>2 из 12</span>
+                                <button class="next" title="Двойной клик в конец">
+                                    <i class="icon">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--Toggled filters-->
+                    <div class="smw-tables-filters">
+                        <div class="filter-box">
+                            <div class="f-head">
+                                <h4>Фильтр #1</h4>
+                                <input type="checkbox" id="smw_fr_4" hidden>
+                                <label for="smw_fr_4">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-equal-not"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <select class="ui search dropdown smw-filter-select" multiple>
+                                <option value=""></option>
+                                <option value="value1">Один</option>
+                                <option value="value2">Два</option>
+                                <option value="value3">Три</option>
+                            </select>
+                        </div>
+                        <div class="filter-box">
+                            <div class="f-head">
+                                <h4>Фильтр #2</h4>
+                                <input type="checkbox" id="smw_fr_5" hidden>
+                                <label for="smw_fr_5">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-equal-not"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <select class="ui search dropdown smw-filter-select" multiple>
+                                <option value=""></option>
+                                <option value="value1">Один</option>
+                                <option value="value2">Два</option>
+                                <option value="value3">Три</option>
+                            </select>
+                        </div>
+                        <div class="filter-btns">
+                            <button class="green">Сохранить</button>
+                            <button>Очистить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="smw-scrollable-tabs">
+                <div class="smw-table-wrapper">
+                    <table class="ui sortable celled table smw-table">
+                        <thead>
+                            <tr>
+                            <!--NOTE: inline styles of th's (min-width) are optional & individual for each th-->
+                            <th class="no-sort tr-handles">&nbsp;</th>
+                            <th class="sorted descending" style="min-width: 50px">
+                                <span>
+                                    Номер
+                                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                                </span>
+                            </th>
+                            <th class="">
+                                <span>
+                                    Тип карты
+                                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                                </span>
+                            </th>
+                            <th class="">
+                                <span>
+                                    Группа
+                                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                                </span>
+                            </th>
+                            <th class="" style="min-width: 140px">
+                                <span>
+                                    Дата окончания
+                                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                                </span>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <!--1 row-->
+                            <tr>
+                                <td>
+                                    <div class="handles">
+                                        <div class="select">
+                                            <input id="smw-tr-2-1" type="checkbox" hidden>
+                                            <label for="smw-tr-2-1">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-check"></use>
+                                                </svg>
+                                            </label>
+                                        </div>
+                                        <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                            <i>
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                                </svg>
+                                            </i>
+                                            <div class="menu">
+                                                <a class="item">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#icon-play"></use>
+                                                    </svg>
+                                                    Активировать
+                                                </a>
+                                                <a class="item">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                    </svg>
+                                                    Редактировать
+                                                </a>
+                                                <a class="item">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                    </svg>
+                                                    Удалить карту
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>7893894982</td>
+                                <td>Идентификационная карта</td>
+                                <td>Пробная</td>
+                                <td><span class="date">20.06.18</span></td>
+                            </tr>
+                            <!--2 row-->
+                            <tr class="selected">
+                                <td>
+                                    <div class="handles">
+                                        <div class="select">
+                                            <input id="smw-tr-2-2" type="checkbox" hidden checked>
+                                            <label for="smw-tr-2-2">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-check"></use>
+                                                </svg>
+                                            </label>
+                                        </div>
+                                        <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                            <i>
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                                </svg>
+                                            </i>
+                                            <div class="menu">
+                                                <a class="item">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#icon-play"></use>
+                                                    </svg>
+                                                    Активировать
+                                                </a>
+                                                <a class="item">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                    </svg>
+                                                    Редактировать
+                                                </a>
+                                                <a class="item">
+                                                    <svg>
+                                                        <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                    </svg>
+                                                    Удалить карту
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>786876872789</td>
+                                <td>Членская карта</td>
+                                <td>Золотая карта</td>
+                                <td><span class="date">20.04.18</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--tab-4-->
+        <div class="tab-content ui tab segment" data-tab="tab-4">
+            <div class="smw-noscroll-point">
+                <div class="smw-point-inner">
+
+                    <!--table controls-->
+                    <div class="smw-tables-controls">
+
+                        <div class="options">
+                            <div class="check-all">
+                                <input id="smw-check-all-4" type="checkbox" hidden>
+                                <label for="smw-check-all-4">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="constructor">
+                                <div class="ui dropdown smw-dropdown smw-dropdown-con item icon pointing left top">
+                                    <i>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-gear"></use>
+                                        </svg>
+                                    </i>
+                                    <div class="menu">
+                                        <div class="item">
+                                            <input type="checkbox" id="smw_tc_1-4" hidden>
+                                            <label for="smw_tc_1-4">
+                                                <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                                <span class="text">Начало</span>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input type="checkbox" id="smw_tc_2-4" hidden>
+                                            <label for="smw_tc_2-4">
+                                                <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                                <span class="text">Длительность</span>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input type="checkbox" id="smw_tc_3-4" hidden>
+                                            <label for="smw_tc_3-4">
+                                                <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                                <span class="text">Состояние</span>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input type="checkbox" id="smw_tc_4-4" hidden>
+                                            <label for="smw_tc_4-4">
+                                                <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                                <span class="text">Основание</span>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input type="checkbox" id="smw_tc_4-5" hidden>
+                                            <label for="smw_tc_4-5">
+                                                <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                                <span class="text">Тренер</span>
+                                            </label>
+                                        </div>
+                                        <!--Form footer-->
+                                        <div class="clear"></div>
+                                        <a class="item extra">
+                                            <span class="text">Показать все</span>
+                                        </a>
+                                        <a class="item extra">
+                                            <span class="text">Скрыть все</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <button class="smw-btn icon no-text default smw-filter-toggle">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-filter"></use>
+                                    </svg>
+                                </i>
+                            </button>
+                            <button class="smw-btn icon no-text default hide-on-mobile">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-refresh"></use>
+                                    </svg>
+                                </i>
+                            </button>
+                            <div
+                            class="ui dropdown item icon pointing left top smw-dropdown smw-dropdown-simple hide-on-tablet">
+                                <i class="icon">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-print"></use>
+                                    </svg>
+                                </i>
+                                <span class="title">Печать</span>
+                                <i class="arrow">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                                    </svg>
+                                </i>
+                                <div class="menu">
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-print"></use>
+                                        </svg>
+                                        Стильно
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-print"></use>
+                                        </svg>
+                                        Модно
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-print"></use>
+                                        </svg>
+                                        Молодежно
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pagination">
+                            <div class="count-select">
+                                <span>На странице:</span>
+                                <!--semantic dropdown-->
+                                <div class="ui dropdown smw-dropdown smw-dropdown-tc labeled button pointing">
+                                    <span class="text">100</span>
+                                    <i class="angle down">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                                        </svg>
+                                    </i>
+                                    <div class="menu">
+                                        <div class="item">10</div>
+                                        <div class="item">25</div>
+                                        <div class="item">50</div>
+                                        <div class="item">100</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="navs">
+                                <button class="prev" title="Двойной клик в начало">
+                                    <i class="icon">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                                <span>2 из 12</span>
+                                <button class="next" title="Двойной клик в конец">
+                                    <i class="icon">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--Toggled filters-->
+                    <div class="smw-tables-filters">
+                        <div class="filter-box">
+                            <div class="f-head">
+                                <h4>Фильтр #1</h4>
+                                <input type="checkbox" id="smw_fr_6" hidden>
+                                <label for="smw_fr_6">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-equal-not"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <select class="ui search dropdown smw-filter-select" multiple>
+                                <option value=""></option>
+                                <option value="value1">Один</option>
+                                <option value="value2">Два</option>
+                                <option value="value3">Три</option>
+                            </select>
+                        </div>
+                        <div class="filter-box">
+                            <div class="f-head">
+                                <h4>Фильтр #2</h4>
+                                <input type="checkbox" id="smw_fr_7" hidden>
+                                <label for="smw_fr_7">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-equal-not"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <select class="ui search dropdown smw-filter-select" multiple>
+                                <option value=""></option>
+                                <option value="value1">Один</option>
+                                <option value="value2">Два</option>
+                                <option value="value3">Три</option>
+                            </select>
+                        </div>
+                        <div class="filter-btns">
+                            <button class="green">Сохранить</button>
+                            <button>Очистить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="smw-scrollable-tabs">
+                <div class="smw-table-wrapper">
+                    <table class="ui sortable celled table smw-table">
+                        <thead>
+                        <tr>
+                            <!--NOTE: inline styles of th's (min-width) are optional & individual for each th-->
+                            <th class="no-sort tr-handles">&nbsp;</th>
+                            <th class="sorted descending" style="min-width: 50px">
+                                <span>
+                                    Начало
+                                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                                </span>
+                            </th>
+                            <th class="">
+                                <span>
+                                    Длительность
+                                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                                </span>
+                            </th>
+                            <th class="">
+                                <span>
+                                    Состояние
+                                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                                </span>
+                            </th>
+                            <th class="">
+                                <span>
+                                    Основание
+                                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                                </span>
+                            </th>
+                            <th class="" style="min-width: 140px">
+                                <span>
+                                    Тренер
+                                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                                </span>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!--1 row-->
+                        <tr>
+                            <td>
+                                <div class="handles">
+                                    <div class="select">
+                                        <input id="smw-tr-3-1" type="checkbox" hidden>
+                                        <label for="smw-tr-3-1">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                    <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                        <i>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                            </svg>
+                                        </i>
+                                        <div class="menu">
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                </svg>
+                                                Редактировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                </svg>
+                                                Удалить посещение
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>07.06.18</td>
+                            <td>1 час</td>
+                            <td><span class="green">Открыто</span></td>
+                            <td>Абонемент йоги на год</td>
+                            <td>Решительный Владислав</td>
+                        </tr>
+                        <!--2 row-->
+                        <tr class="selected">
+                            <td>
+                                <div class="handles">
+                                    <div class="select">
+                                        <input id="smw-tr-3-2" type="checkbox" hidden checked>
+                                        <label for="smw-tr-3-2">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                    <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                        <i>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                            </svg>
+                                        </i>
+                                        <div class="menu">
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                </svg>
+                                                Редактировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                </svg>
+                                                Удалить посещение
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>20.06.18</td>
+                            <td>2 часа</td>
+                            <td><span class="disable">Закрыто</span></td>
+                            <td>Абонемент йоги на год</td>
+                            <td>Решительный Владислав</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--tab-5-->
+        <div class="tab-content ui tab segment" data-tab="tab-5">
+            <div class="smw-noscroll-point">
+                <div class="smw-point-inner">
+
+                    <!--table controls-->
+                    <div class="smw-tables-controls">
+
+                        <div class="options">
+                            <div class="check-all">
+                                <input id="smw-check-all-1" type="checkbox" hidden>
+                                <label for="smw-check-all-1">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-check"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <div class="constructor">
+                                <div class="ui dropdown smw-dropdown smw-dropdown-con item icon pointing left top">
+                                    <i>
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-gear"></use>
+                                        </svg>
+                                    </i>
+                                    <div class="menu">
+                                        <div class="item">
+                                            <input type="checkbox" id="smw_tc_1" hidden>
+                                            <label for="smw_tc_1">
+                                                <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                                <span class="text">Начало</span>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input type="checkbox" id="smw_tc_2" hidden>
+                                            <label for="smw_tc_2">
+                                                <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                                <span class="text">Тренировка</span>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input type="checkbox" id="smw_tc_3" hidden>
+                                            <label for="smw_tc_3">
+                                                <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                                <span class="text">Тренер</span>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input type="checkbox" id="smw_tc_4" hidden>
+                                            <label for="smw_tc_4">
+                                                <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                                <span class="text">Место</span>
+                                            </label>
+                                        </div>
+                                        <div class="item">
+                                            <input type="checkbox" id="smw_tc_5" hidden>
+                                            <label for="smw_tc_5">
+                                                <span class="cb">
+                                        <svg><use xlink:href="img/sprite.svg#icon-check"></use></svg>
+                                    </span>
+                                                <span class="text">Основание</span>
+                                            </label>
+                                        </div>
+                                        <!--Form footer-->
+                                        <div class="clear"></div>
+                                        <a class="item extra">
+                                            <span class="text">Показать все</span>
+                                        </a>
+                                        <a class="item extra">
+                                            <span class="text">Скрыть все</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <button class="smw-btn icon no-text default smw-filter-toggle">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-filter"></use>
+                                    </svg>
+                                </i>
+                            </button>
+                            <button class="smw-btn icon no-text default hide-on-mobile">
+                                <i>
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-refresh"></use>
+                                    </svg>
+                                </i>
+                            </button>
+                            <div
+                            class="ui dropdown item icon pointing left top smw-dropdown smw-dropdown-simple hide-on-tablet">
+                                <i class="icon">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-print"></use>
+                                    </svg>
+                                </i>
+                                <span class="title">Печать</span>
+                                <i class="arrow">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                                    </svg>
+                                </i>
+                                <div class="menu">
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-print"></use>
+                                        </svg>
+                                        Стильно
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-print"></use>
+                                        </svg>
+                                        Модно
+                                    </a>
+                                    <a class="item">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-print"></use>
+                                        </svg>
+                                        Молодежно
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pagination">
+                            <div class="count-select">
+                                <span>На странице:</span>
+                                <!--semantic dropdown-->
+                                <div class="ui dropdown smw-dropdown smw-dropdown-tc labeled button pointing">
+                                    <span class="text">100</span>
+                                    <i class="angle down">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                                        </svg>
+                                    </i>
+                                    <div class="menu">
+                                        <div class="item">10</div>
+                                        <div class="item">25</div>
+                                        <div class="item">50</div>
+                                        <div class="item">100</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="navs">
+                                <button class="prev" title="Двойной клик в начало">
+                                    <i class="icon">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                                <span>2 из 12</span>
+                                <button class="next" title="Двойной клик в конец">
+                                    <i class="icon">
+                                        <svg>
+                                            <use xlink:href="img/sprite.svg#icon-arrow"></use>
+                                        </svg>
+                                    </i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--Toggled filters-->
+                    <div class="smw-tables-filters">
+                        <div class="filter-box">
+                            <div class="f-head">
+                                <h4>Фильтр #1</h4>
+                                <input type="checkbox" id="smw_fr_8" hidden>
+                                <label for="smw_fr_8">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-equal-not"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <select class="ui search dropdown smw-filter-select" multiple>
+                                <option value=""></option>
+                                <option value="value1">Один</option>
+                                <option value="value2">Два</option>
+                                <option value="value3">Три</option>
+                            </select>
+                        </div>
+                        <div class="filter-box">
+                            <div class="f-head">
+                                <h4>Фильтр #2</h4>
+                                <input type="checkbox" id="smw_fr_9" hidden>
+                                <label for="smw_fr_9">
+                                    <svg>
+                                        <use xlink:href="img/sprite.svg#icon-equal-not"></use>
+                                    </svg>
+                                </label>
+                            </div>
+                            <select class="ui search dropdown smw-filter-select" multiple>
+                                <option value=""></option>
+                                <option value="value1">Один</option>
+                                <option value="value2">Два</option>
+                                <option value="value3">Три</option>
+                            </select>
+                        </div>
+                        <div class="filter-btns">
+                            <button class="green">Сохранить</button>
+                            <button>Очистить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="smw-scrollable-tabs">
+                <div class="smw-table-wrapper">
+                    <table class="ui sortable celled table smw-table">
+                        <thead>
+                        <tr>
+                            <!--NOTE: inline styles of th's (min-width) are optional & individual for each th-->
+                            <th class="no-sort tr-handles">&nbsp;</th>
+                            <th class="sorted descending" style="min-width: 50px">
+                                <span>
+                                    Начало
+                                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                                </span>
+                            </th>
+                            <th class="">
+                                <span>
+                                    Тренировка
+                                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                                </span>
+                            </th>
+                            <th class="">
+                                <span>
+                                    Тренер
+                                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                                </span>
+                            </th>
+                            <th class="">
+                                <span>
+                                    Место
+                                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                                </span>
+                            </th>
+                            <th class="" style="min-width: 140px">
+                                <span>
+                                    Основание
+                                    <i class="icon"><svg><use xlink:href="img/sprite.svg#icon-arrow"></use></svg></i>
+                                </span>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!--1 row-->
+                        <tr>
+                            <td>
+                                <div class="handles">
+                                    <div class="select">
+                                        <input id="smw-tr-4-1" type="checkbox" hidden>
+                                        <label for="smw-tr-4-1">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                    <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                        <i>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                            </svg>
+                                        </i>
+                                        <div class="menu">
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                </svg>
+                                                Редактировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                </svg>
+                                                Удалить посещение
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>07.06.18</td>
+                            <td>Бокс</td>
+                            <td>Васечкин Петр</td>
+                            <td>Тренажерный зал 3</td>
+                            <td>Карта на 30 посещений</td>
+                        </tr>
+                        <!--2 row-->
+                        <tr class="selected">
+                            <td>
+                                <div class="handles">
+                                    <div class="select">
+                                        <input id="smw-tr-4-2" type="checkbox" hidden checked>
+                                        <label for="smw-tr-4-2">
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-check"></use>
+                                            </svg>
+                                        </label>
+                                    </div>
+                                    <div class="ui dropdown smw-dropdown item icon pointing left top">
+                                        <i>
+                                            <svg>
+                                                <use xlink:href="img/sprite.svg#icon-menu-dots"></use>
+                                            </svg>
+                                        </i>
+                                        <div class="menu">
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-pencil"></use>
+                                                </svg>
+                                                Редактировать
+                                            </a>
+                                            <a class="item">
+                                                <svg>
+                                                    <use xlink:href="img/sprite.svg#icon-trash"></use>
+                                                </svg>
+                                                Удалить посещение
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>20.06.18</td>
+                            <td>Йога</td>
+                            <td>Гибкая Екатерина</td>
+                            <td>Зал великих йогов</td>
+                            <td>Годовая карта йога</td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!--JavaScript for clients page-->
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/jquery.nicescroll.min.js"></script>
@@ -1689,6 +4124,10 @@ Here for avoiding child fixed element problem with transformed parent
 <!--Semantic scripts-->
 <script src="js/semantic/dropdown.min.js"></script>
 <script src="js/semantic/transition.min.js"></script>
+<script src="js/semantic/dimmer.min.js"></script>
+<script src="js/semantic/tab.min.js"></script>
+<script src="js/semantic/popup.min.js"></script>
+<script src="js/semantic/calendar.min.js"></script>
 <!--Main app JavaScript-->
 <script src="js/app-global.js"></script>
 <script src="js/app-clients.js"></script>
