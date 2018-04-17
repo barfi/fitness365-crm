@@ -46,6 +46,7 @@ $(document).ready(function () {
         }, 300, function () {
             smwEl.addClass('open');
             smwEl.removeAttr('style');
+            smwTabsScroll.resize();
         });
     });
 
